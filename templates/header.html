@@ -1,45 +1,13 @@
-<div class="top-bar">
+<div class="top-bar py-2" style="color: #cccccc !important;">
     <div class="logo" style="min-width:0px;">
          <!--a href="#"><img src="images/ssv-logo.png" alt="Sunshine Village" style="width: 56%;"></a-->
          <div class="menu-options"><span class="menu-action"><i></i></span></div>
     </div>
 
-  <div ng-controller="headerController" class="topbar-menu-custom"><h5><a href="" class="logouta" ng-click="logout()"><i></i> {{"Log Out" | translate }}</a></h5></div>
-  <div ng-hide="true" class="quick-links" style="margin-top: 3px; margin-left: 15px; margin-right: 15px;">
-        <ul>
-            <li  ng-controller="headerController">
-              <!--
-                <a title="" class="fa fa-bell" style="width: 28px;"><i class="fa" style="background:#cccccc;color: #fff;border-radius: 50%;border:1px solid #cccccc;width: 11px;height: 12px;font-size: 11px;"
-                  ng-style="notificationCount > 0 && {'background-color': '#ff6b6b', 'border-color': '#ff6262'}">{{notificationCount}}</i>
-                </a>
-              -->
-                <div class="notif_button">
-                  <i class="fa fa-bell"></i>
-                  <span class="notif_button__badge" ng-class="notificationCount <= 0 ? 'notif_empty':''">{{notificationCount}}</span>
-                </div>
-                <div class="dialouge  notification" style="display: none;">
-                    <!--span>You have 6 New Notification</span>
-                    <a title="" href="/"><img alt="" src="http://placehold.it/40x40">Server 3 is Over Loader Pleas
-                    toe Check. <p><i class="fa fa-clock-o"></i>3:45pm</p></a>
-                    <a title="" href="/"><img alt="" src="http://placehold.it/40x40">Server 10 is Over Loader Pleas
-                    toe Check. <p><i class="fa fa-clock-o"></i>1:40am</p></a>
-                    <a title="" href="/"><img alt="" src="http://placehold.it/40x40">New User Registered Please Check This <p><i class="fa fa-clock-o"></i>4 Hours ago</p></a-->
-                    <div class="dialouge_div_inside" >
-                      <div class="red2" ng-show="WebSocketError" style="padding: 15px 22px; margin-top: 5px;">
-                          <h6 style="color: #fff;" >{{"You're not connected to webSocket. You won't receive realtime notification/s." | translate}} {{"Please" | translate}} <u style="cursor: pointer;" ng-click="reload()">{{"reload" | translate}}</u>.</h6> 
-                      </div>
-                      <a title="" href="{{data.reservation_link ? data.reservation_link : curr_loc}}" ng-click="addToViewed(data.notification_id)" ng-repeat="data in MyData.collection track by $index">
-  						          <span class="badge red-skin" ng-show="!data.viewed" >N</span> {{data.message | translate: data.data | searchAndFormatDate}}
-                      </a>
-                    </div>
-                    <span ng-show="MyData.collection.length == 0 && !WebSocketError"><h6>{{ "No Notification Today" | translate | uppercase }}<!--No notification today--></h6></span>
-                    <a class="view-all" ng-click="to_notification();">{{ "View all Notifications" | translate | uppercase }}<!--VIEW ALL NOTIFICATIONS--></a>
-                </div>
-            </li>
-        </ul>
-  </div>
-  <div class="topbar-menu-custom hidden-xs"><h5><span id="getday"></span><span class="colonsep"> : </span><span id="clock"></span><span class="colonsep"> : </span><span id="getdate"></span></h5></div>
-  <div class="topbar-menu-custom hidden-xs"><h5 style="color: #cccccc !important;">Hi {{ fname }}, {{"Welcome back" | translate }}</h5></div>
+    <div ng-controller="headerController" class="topbar-menu-custom"><h6 class="m-0"><a href="" class="logouta" ng-click="logout()"><i></i> {{"Log Out" | translate }}</a></h6></div>
+
+    <div class="topbar-menu-custom hidden-xs"><h6 class="m-0"><span id="getday"></span><span class="colonsep"> : </span><span id="clock"></span><span class="colonsep"> : </span><span id="getdate"></span></h6></div>
+    <div class="topbar-menu-custom hidden-xs"><h6 class="m-0" style="color: #cccccc !important;">Hi {{ fname }}, {{"Welcome back" | translate }}</h6></div>
   <!--
   <div class="topbar-menu-custom"><h5 style="color: #cccccc !important;"><span ng-click="changeLanguage('en')" class="cursor-pointer" ng-class="{'activeLanguage' :lang == 'en'}">EN</span> <span ng-click="changeLanguage('pt')" class="cursor-pointer" ng-class="{'activeLanguage' :lang == 'pt'}">PT</span></h5></div>
   -->
@@ -82,28 +50,8 @@
         </div>
     </div><!-- Menu Scroll -->
 </header>
-<div class="main-content" style="padding: 45px 45px 0px 265px;" ng-controller="headerController">
-	
-</div>
+<div class="main-content" style="padding: 45px 45px 0px 265px;" ng-controller="headerController"></div>
 
-<script type="text/ng-template" id="server.html">
-  <div class="modal-header text-center">
-    <button type="button" class="close" ng-click="cancel()"><i class="ti-close"></i></button>
-    <h5 class="modal-title" id="modal-title" style="margin-left: 21px;">{{ "SERVER ADDRESS" | translate | uppercase}}</h5>
-  </div>
-  <div class="modal-body">
-    <form name="categoryForm" category="form" validate>
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-          <span>{{serveraddress}}/iServe/</span>
-        </div>
-      </div>
-    </form>
-  </div>
-  <div class="modal-footer text-center">
-    <input ng-click="cancel()" class="btn btn-success" style="width: 115px;" type="button" value="Close"/>
-  </div>
-</script>
 <script type="text/javascript">
     angular.element(document).ready(function(){
     

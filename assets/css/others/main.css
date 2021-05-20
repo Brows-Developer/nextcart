@@ -55,7 +55,7 @@
 
 /*=============== General Styling ===================*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic,700,700italic,300,300italic');
-@import url('https://fonts.googleapis.com/css?family=Candara:400,700');
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
 
 .grey1 {
@@ -82,8 +82,8 @@ body {
     width: 100%;
 }
 h1,h2,h3,h4,h5,h6{
-    font-family:Candara;
-    color:#202020;
+    font-family:Nunito;
+    /*color:#202020;*/
 }
 p{
     font-family:Open sans;
@@ -139,7 +139,7 @@ a{
 .logo > a {
     color: #263238;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 14px;
     font-weight: bold;
     line-height: 25px;
@@ -153,7 +153,7 @@ a{
 }
 .menu-options {
 	/*margin-top: 15px;*/
-    margin-top: 3px;
+    margin-top: -5px;
     color: #808891;
     cursor: pointer;
     float: right;
@@ -511,7 +511,7 @@ header.side-header.light-skin {
     color: #ffffff;
     display: block;
     float: none;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 15px;
     margin: 3px 0 0;
 }
@@ -751,7 +751,7 @@ header.side-header.light-skin {
 .heading-profile > h2 {
     color: #263238;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 20px;
     margin: 0 0 6px;
     width: 100%;
@@ -791,7 +791,7 @@ header.side-header.light-skin {
 .quick-report h3 {
     color: #4c4c4c;
     display: list-item;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 19px;
     list-style: outside none none;
     margin: 0;
@@ -1063,7 +1063,7 @@ header.side-header.light-skin {
 .total-sales-info ul li h5 {
     color: #4d575d;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 18px;
     margin: 4px 0 0;
     width: 100%;
@@ -1186,7 +1186,7 @@ header.side-header.light-skin {
 .graph-details > ul > li strong {
     color: #4d575d;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 18px;
     font-weight: normal;
     margin-top: 11px;
@@ -1333,7 +1333,7 @@ header.side-header.light-skin {
 .admin-follow > ul > li > span {
     color: #4d575d;
     display: block;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 15px;
     margin-top: 10px;
 }
@@ -1398,7 +1398,7 @@ form.filterform {
 .client-info > h3 a {
     color: #2e2e2e;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 15px;
     margin: 0;
     width: 100%;
@@ -1412,7 +1412,7 @@ form.filterform {
 
     color: #fff;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 21px;
     height: 51px;
     line-height: 50px;
@@ -1479,7 +1479,7 @@ form.filterform {
 .product-info > h3 {
     color: #ffffff;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 22px;
     margin: 0 0 7px;
     width: 100%;
@@ -2170,7 +2170,7 @@ footer li{
 .server-details > h5 {
     color: #929292;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 13px;
     margin: 0;
     width: 100%;
@@ -2414,7 +2414,7 @@ footer li{
 .social-widget > span {
     color: #9f9f9f;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 16px;
     margin-top: 11px;
     text-align: center;
@@ -2494,7 +2494,7 @@ footer li{
 .map-table > h3 {
     color: #666666;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 15px;
     font-weight: bold;
     letter-spacing: 0.2px;
@@ -2506,7 +2506,7 @@ footer li{
 .map-table > h4 {
     color: #464646;
     float: right;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 15px;
     letter-spacing: 0.2px;
     margin: 0;
@@ -2581,7 +2581,7 @@ footer li{
     border-radius: 3px;
 
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 15px;
     left: 50%;
     margin: 0;
@@ -2612,7 +2612,7 @@ footer li{
 .product-stats > ul > li > span {
     color: #494949;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 14px;
     margin-top: 6px;
     width: 100%;
@@ -2628,7 +2628,7 @@ footer li{
 
     color: #ffffff;
     display: inline-block;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 13px;
     margin-top: 25px;
     padding: 12px 27px;
@@ -2709,7 +2709,7 @@ footer li{
 
     color: #717171;
     float: right;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 12px;
     padding: 6px 14px;
 }
@@ -2871,7 +2871,7 @@ footer li{
 .who-post-detail > h3 > a {
     color: #2e2e2e;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 14px;
     padding-right: 20px;
     position: relative;
@@ -3218,7 +3218,7 @@ footer li{
 }
 .comment-detail > span > a {
     color: #000000;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 13px;
 }
 .comment-detail > p {
@@ -3354,7 +3354,7 @@ footer li{
 }
 .quick-stats-box > p > i {
     color: #ffffff;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 14px;
     font-style: normal;
     left: 0;
@@ -3738,7 +3738,7 @@ margin-top: -2%;
 .notify  h3 {
     color: #2e2e2e;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 15px;
     line-height: 26px;
     margin: 0 14px 0 0;
@@ -3822,7 +3822,7 @@ margin-top: -2%;
 .search-sec > span {
     color: #232323;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 15px;
     margin-bottom: 20px;
     width: 100%;
@@ -4037,7 +4037,7 @@ margin-top: -2%;
 .price-title {
     color: #383838;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 18px;
     padding: 0 20px;
     width: 100%;
@@ -4056,7 +4056,7 @@ margin-top: -2%;
     color: #383838;
     display: inline-block;
     float: none;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 90px;
     font-weight: 900;
     margin: 0;
@@ -4064,7 +4064,7 @@ margin-top: -2%;
 .price-rate > h3 > span {
     color: #b4b2b2;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 30px;
     font-weight: normal;
     line-height: 59px;
@@ -4119,7 +4119,7 @@ margin-top: -2%;
     -o-border-radius: 5px;
     border-radius: 5px;
     display: inline-block;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 13px;
     line-height: 10px;
     padding: 17px 20px;
@@ -10116,7 +10116,7 @@ margin-top: -2%;
 
     color: #ffffff;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 12px;
     margin-top: 20px;
     padding: 14px 30px;
@@ -10184,7 +10184,7 @@ margin-top: -2%;
 
     color: #ffffff;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 13px;
     margin-top: 19px;
     padding: 14px 30px;
@@ -10288,7 +10288,7 @@ margin-top: -2%;
 .invoice-sec strong {
     color: #232323;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 15px;
     font-weight: normal;
     letter-spacing: 0.3px;
@@ -10346,7 +10346,7 @@ margin-top: -2%;
 .invoice-head h2 {
     color: #232323;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 14px;
     font-weight: normal;
     letter-spacing: 0.3px;
@@ -10426,7 +10426,7 @@ margin-top: -2%;
     border-radius: 5px;
     color: #ffffff;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 14px;
     line-height: 10px;
     margin: 20px;
@@ -10461,7 +10461,7 @@ margin-top: -2%;
 .cart-heading h2 {
     color: #2e2e2e;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 15px;
     font-weight: 500;
     line-height: 12px;
@@ -10653,7 +10653,7 @@ border-radius: 3px;
 .cart-total-sec span {
     color: #444444;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 15px;
     font-weight: 100;
     letter-spacing: 0.3px;
@@ -10745,7 +10745,7 @@ border-radius: 3px;
 }
 .payment-method > label {
     display: list-item;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 12px;
     font-weight: 100;
     letter-spacing: 0.25px;
@@ -10795,7 +10795,7 @@ border-radius: 3px;
     border-radius: 5px;
     color: #ffffff;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 13px;
     letter-spacing: 0.25px;
     padding: 12px 20px;
@@ -10822,7 +10822,7 @@ border-radius: 3px;
 
     color: #ffffff;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 13px;
     letter-spacing: 0.25px;
     margin-top: 40px;
@@ -10831,7 +10831,7 @@ border-radius: 3px;
 }
 .billing-sec .field > label {
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 12px;
     font-weight: normal;
     margin: 0 0 10px;
@@ -11284,7 +11284,7 @@ acronym {
     border: medium none;
     color: #ffffff;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     margin-top: 20px;
     width: auto;
     margin-bottom: 0;
@@ -11315,7 +11315,7 @@ acronym {
 }
 .contact-details-info > h3 {
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 18px;
     margin-bottom: 9px;
     width: 100%;
@@ -11331,7 +11331,7 @@ acronym {
     color: #676666;
     display: table;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 13px;
     margin-bottom: 14px;
     width: 100%;
@@ -11384,7 +11384,7 @@ acronym {
 .error-sec > h2 {
     color: #232323;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 180px;
     font-weight: bold;
     margin: 0;
@@ -11401,7 +11401,7 @@ acronym {
     color: #ffffff;
     display: inline-block;
     float: none;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 13px;
     padding: 13px 22px;
 }
@@ -11855,7 +11855,7 @@ ul.countdown {
     background: #ffffff none repeat scroll 0 0;
     border: medium none;
     display: inline-block;
-    font-family: Candara;
+    font-family: Nunito;
     padding: 15px 50px;
     text-align: center;
 }
@@ -11864,7 +11864,7 @@ ul.countdown {
     border: medium none;
     color: #ffffff;
     display: inline-block;
-    font-family: Candara;
+    font-family: Nunito;
     height: 50px;
     padding: 0 20px;
 }
@@ -11886,7 +11886,7 @@ ul.countdown > li {
 }
 ul.countdown > li > span {
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 27px;
     margin-bottom: 5px;
     padding-top: 48px;
@@ -12029,7 +12029,7 @@ ul.countdown > li > p {
 }
 .product-four > h3 {
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 17px;
     margin: 20px 0 5px;
     width: 100%;
@@ -12101,7 +12101,7 @@ ul.countdown > li > p {
 }
 .team-info > h3 {
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 17px;
     width: 100%;
 }
@@ -12363,7 +12363,7 @@ ul.countdown > li > p {
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 15px;
     overflow: hidden;
     padding: 13px 30px 13px 60px;
@@ -12440,7 +12440,7 @@ ul.countdown > li > p {
 
      color: #fff;
     cursor: pointer;
-    font-family: Candara;
+    font-family: Nunito;
     outline: medium none;
     padding: 11px 37px;
 }
@@ -12896,7 +12896,7 @@ box-shadow: 0px 0px 5px 0px rgba(31,181,174,1);
 
     color: #2e2e2e;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-weight: normal;
     padding: 13px 40px;
     margin: 0;
@@ -12967,7 +12967,7 @@ box-shadow: 0px 0px 5px 0px rgba(31,181,174,1);
 }
 .user-thumb > h3 {
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 18px;
     text-align: center;
     width: 100%;
@@ -12994,7 +12994,7 @@ box-shadow: 0px 0px 5px 0px rgba(31,181,174,1);
 .user-bar > ul > li {
     color: #2e2e2e;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 19px;
     padding: 23px 25px 19px;
 }
@@ -13017,7 +13017,7 @@ box-shadow: 0px 0px 5px 0px rgba(31,181,174,1);
 
     color: #ffffff;
     float: right;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 13px;
     margin: 22px 40px;
     padding: 10px 23px;
@@ -13208,7 +13208,7 @@ input:checked + .toggle .toggle__handler {
 }
 .inbox-panel-head > h1 {
     display: block;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 16px;
     margin: 3px 0 8px;
 }
@@ -13250,7 +13250,7 @@ input:checked + .toggle .toggle__handler {
 
     color: #fff;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 14px;
     padding: 10px 31px;
 }
@@ -13308,7 +13308,7 @@ input:checked + .toggle .toggle__handler {
 }
 .flaged > h3 {
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 16px;
     margin: 10px 0 0;
     padding: 24px 40px;
@@ -13418,7 +13418,7 @@ input:checked + .toggle .toggle__handler {
 }
 .message-list > li > .sender-name {
     display: inline-block;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 14px;
     margin: 0;
     width: auto;
@@ -13648,7 +13648,7 @@ li.L9 {
     border: medium none;
     color: #ffffff;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     margin-bottom: 2px;
     margin-right: 2px;
     padding: 0;
@@ -13769,7 +13769,7 @@ li.L9 {
     background: #e1e1e1 none repeat scroll 0 0;
     color: #000000;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     margin-bottom: 10px;
     margin-right: 10px;
     padding: 10px 30px;
@@ -13781,7 +13781,7 @@ li.L9 {
 }
 .effects > h2 {
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 18px;
     margin: 0 0 10px;
     padding-bottom: 20px;
@@ -13852,7 +13852,7 @@ li.L9 {
 .maintainance-mode h2 {
     color: #333333;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 25px;
     font-weight: bold;
     line-height: 30px;
@@ -13871,7 +13871,7 @@ li.L9 {
 }
 .maintainance-mode .fancy-social > span {
     color: #c9c9c9;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 11px;
     font-weight: normal;
     letter-spacing: 0.5px;
@@ -13887,7 +13887,7 @@ li.L9 {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     border: medium none;
     float: left;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 13px;
     letter-spacing: 0.5px;
     padding: 9px 20px;
@@ -13904,7 +13904,7 @@ li.L9 {
 
     color: #fff;
     float: right;
-    font-family: Candara;
+    font-family: Nunito;
     font-size: 13px;
     padding: 9px 24px;
 }
