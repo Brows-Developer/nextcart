@@ -1,0 +1,20 @@
+{
+	"notif_logged_in":"{{var_1}} has logged in",
+	"notif_logged_out":"{{var_1}} has logged out",
+	"notif_out_stock":"{{var_1}} for {{var_2}} is out of stock.",
+	"notif_low_stock":"{{var_1}} for {{var_2}} is low in stock.",
+	"notif_checked_in":"New Checked In Reservation. {{var_1}} REF#{{var_2}}",
+	"notif_checked_out":"New Checked Out Reservation. {{var_1}} REF#{{var_2}}",
+	"notif_modified_reservation":"New Modified Reservation! {{var_1}} Edit Period from {{var_2}} to {{var_3}} REF#{{var_4}}",
+	"notif_new_reservation":"New-Reservation! Source: {{var_1}} From {{var_2}} to {{var_3}} REF#{{var_4}}",
+	"notif_payment_made":"A payment has been made. Booking REF#{{var_1}}, Client: {{var_2}}, Paid: {{var_3}}",
+	"notif_transfer_reservation":"New Transfer Room Reservation! {{var_1}} from {{var_2}} to {{var_3}} REF#{{var_4}}",
+	"notif_no_show_reservation":"New No Show Reservation. {{var_1}} REF#{{var_2}}",
+	"notif_block_rooms":"Block Room(s): {{var_1}} from {{var_2}} to {{var_3}} Reason: {{var_4}}",
+	"notif_rate_room_modified":"A rate/room type has been modified. Room Type \"{{var_1}}\" to \"{{var_2}}\";",
+	"notif_payment_made_2":"A payment has been made. Booking REF#{{var_1}}, Client: {{var_2}} Changed total paid to {{var_3}}",
+	"notif_modified_client_info":"A client information has been modified. {{var_1}}; REF#{{var_2}}",
+	"notif_rate_room_modified_2":"A rate/room type has been modified. Room Type: {{var_1}}. Rate: {{var_2}} from {{var_3}}",
+	"notif_user_created":"New user has been created. {{var_1}} - {{var_2}}"
+
+}

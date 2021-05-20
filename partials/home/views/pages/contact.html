@@ -1,0 +1,151 @@
+<div id="progressBar">
+	<div class="loader"></div>
+</div> 
+<div class="breadcrumbs">
+	<ul>
+		<li><a href="#/" title="">Home</a></li>
+		<li><a href="#/pages/contact" title="">Contact Us</a></li>
+	</ul>
+</div>
+
+<div class="heading-sec">
+	<div class="row">
+		<div class="col-md-4 column">
+			<div class="heading-profile">
+				<h2>Contact Us</h2>
+				<span>Very detailed & featured admin.</span>
+			</div>
+		</div>
+		<div class="col-md-8 column">
+			<div class="top-bar-chart">
+				<div class="quick-report">
+					<div class="quick-report-infos">
+						<p>My Balance</p>
+						<h3>$21,561.21</h3>
+					</div>
+					<span class="bar2">5,7,4,6,9,10,13,6,5,4,7,6,5,3</span>
+				</div>
+				<div class="quick-report">
+					<div class="quick-report-infos">
+						<p>New orders</p>
+						<h3>17,561</h3>
+					</div>
+					<span class="bar">2,3,7,4,6,9,5,4,3,4,6,4,2</span>
+				</div>
+			</div><!-- Top Bar Chart -->
+		</div>
+	</div>
+</div><!-- Top Bar Chart -->
+
+<div class="panel-content">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="widget">
+				<div class="contact-sec">
+					<div class="widget-title">
+						<h3>Contact Sec</h3>
+						<span>Your last activity is posted 4 hours ago</span>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div id="contact">
+								<div id="message"></div>
+								<form id="contactform" name="contactform" action="contact.php" method="post">	
+									<div class="row">
+										<div class="col-md-12">
+											<input type="text" placeholder="Your Name" class="input-style" id="name" name="name">
+										</div>
+										<div class="col-md-12">
+											<input type="text" placeholder="Your Email" class="input-style" id="email" name="email">
+										</div>
+										<div class="col-md-12">
+											<input type="text" placeholder="Website" class="input-style">
+										</div>
+										<div class="col-md-12">
+											<textarea placeholder="Your Comment" class="input-style" id="comments" name="comments"></textarea>
+										</div>
+										<div class="col-md-12">
+											<p><span class="required">*</span> Are you human?</p>
+											<label for="verify" accesskey="V">3 + 1 =</label>
+											<input name="verify" type="text" id="verify" size="4" value="" />
+										</div>
+										<div class="col-md-12">
+											<input type="submit" value="Submit" id="submit" class="submit">
+										</div>
+									</div>
+								</form>
+							</div><!-- Form -->
+						</div>
+						<div class="col-md-6">
+							<div class="contact-details-info">
+								<h3>Chat with Friend</h3>
+								<p>Aliquam ac sem hendrerit, blandit ante eleifend, aliquam dolor. Sed eu ultricies nisl, eu tincidunt nulla. Sed eu risus et ipsum elementum vehicula.</p>
+								<ul>
+									<li><i class="fa fa-phone"></i> 456 674 90 (565 78 90)</li>
+									<li><i class="fa fa-envelope-o"></i> webinane@email.com</li>
+									<li><i class="fa fa-twitter"></i> twitter.com/webinane</li>
+									<li><i class="fa fa-facebook"></i> fb.com/webinane</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="maptwo"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- Panel Content -->
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+    
+    "use strict";
+
+
+    	$('#contactform').submit(function(){
+			var action = $(this).attr('action');
+			$("#message").slideUp(750,function() {
+			$('#message').hide();
+	 		$('#submit')
+				.after('<img src="images/ajax-loader.gif" class="loader-form" alt="" />')
+				.attr('disabled','disabled');
+			$.post(action, {
+				name: $('#name').val(),
+				email: $('#email').val(),
+				phone: $('#phone').val(),
+				subject: $('#subject').val(),
+				comments: $('#comments').val(),
+				verify: $('#verify').val()
+			},
+				function(data){
+					document.getElementById('message').innerHTML = data;
+					$('#message').slideDown('slow');
+					$('#contactform img.loader-form').fadeOut('slow',function(){$(this).remove()});
+					$('#submit').removeAttr('disabled');
+					if(data.match('success') != null) $('#contactform').slideUp('slow');
+				}
+			);
+
+			});
+			return false;
+		});
+
+    	//*** Piety Mini Charts ***//
+    	$(function() {
+  			$(".bar").peity("bar", {
+			  fill: ["#ff8484"],
+			  height: ["40px"],
+			  width: ["94px"]
+			})
+
+			$(".bar2").peity("bar", {
+			  fill: ["#9797ff"],
+			  height: ["40px"],
+			  width: ["94px"]
+			})
+  		});
+
+    });
+
+</script>

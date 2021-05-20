@@ -1,0 +1,53 @@
+<!-- <div id="progressBar">
+	<div class="loader"></div>
+</div>  -->
+<div class="account-user-sec">
+	<div class="account-sec">
+		<div class="acount-sec">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2">
+					</div>
+					<div class="col-md-8">
+
+						<div class="contact-sec" ng-class="dataLoading ? 'widget loading-wait' : ''">
+							<div class="row">
+								<div class="col-md-2">
+								</div>
+								<div class="col-md-8 text-center">
+									<img src="{{login_image}}" alt="iServe" style="width: 40%; min-height: 75px;">
+									<div class="widget-title text-left">
+										<h3>{{login_for_heading}}</h3>
+										<span>Fill your detail to get in</span>
+									</div><!-- Widget title -->
+									<div class="account-form">
+									<div ng-show="error" class="alert alert-danger">{{error}}</div>
+										<form name="form" ng-submit="login()" role="form">
+											<div class="row">
+												<div class="feild col-md-12">
+													<input type="text" placeholder="Username" name="username" id="username" ng-model="username" required  />
+													<span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+												</div>
+												<div class="feild col-md-12">
+													<input type="password" placeholder="Password" name="password" id="password" ng-model="password" required />
+													<span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+												</div>
+												<div class="feild col-md-12">
+													<input style="float: none !important;" type="submit" value="Login Now" ng-disabled="form.$invalid || dataLoading" />
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="col-md-2">
+								</div>
+							</div>
+						</div>
+					</div>
+				   <div class="col-md-2">
+				   </div>
+				</div>
+			</div>
+		</div>
+	</div><!-- Account Sec -->
+</div>

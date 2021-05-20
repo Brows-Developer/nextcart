@@ -1,0 +1,276 @@
+<div class="top-bar">
+    <div class="logo" style="min-width:0px;">
+         <!--a href="#"><img src="images/ssv-logo.png" alt="Sunshine Village" style="width: 56%;"></a-->
+         <div class="menu-options"><span class="menu-action"><i></i></span></div>
+    </div>
+
+  <div ng-controller="headerController" class="topbar-menu-custom"><h5><a href="" class="logouta" ng-click="logout()"><i></i> {{"Log Out" | translate }}</a></h5></div>
+  <div ng-hide="true" class="quick-links" style="margin-top: 3px; margin-left: 15px; margin-right: 15px;">
+        <ul>
+            <li  ng-controller="headerController">
+              <!--
+                <a title="" class="fa fa-bell" style="width: 28px;"><i class="fa" style="background:#cccccc;color: #fff;border-radius: 50%;border:1px solid #cccccc;width: 11px;height: 12px;font-size: 11px;"
+                  ng-style="notificationCount > 0 && {'background-color': '#ff6b6b', 'border-color': '#ff6262'}">{{notificationCount}}</i>
+                </a>
+              -->
+                <div class="notif_button">
+                  <i class="fa fa-bell"></i>
+                  <span class="notif_button__badge" ng-class="notificationCount <= 0 ? 'notif_empty':''">{{notificationCount}}</span>
+                </div>
+                <div class="dialouge  notification" style="display: none;">
+                    <!--span>You have 6 New Notification</span>
+                    <a title="" href="/"><img alt="" src="http://placehold.it/40x40">Server 3 is Over Loader Pleas
+                    toe Check. <p><i class="fa fa-clock-o"></i>3:45pm</p></a>
+                    <a title="" href="/"><img alt="" src="http://placehold.it/40x40">Server 10 is Over Loader Pleas
+                    toe Check. <p><i class="fa fa-clock-o"></i>1:40am</p></a>
+                    <a title="" href="/"><img alt="" src="http://placehold.it/40x40">New User Registered Please Check This <p><i class="fa fa-clock-o"></i>4 Hours ago</p></a-->
+                    <div class="dialouge_div_inside" >
+                      <div class="red2" ng-show="WebSocketError" style="padding: 15px 22px; margin-top: 5px;">
+                          <h6 style="color: #fff;" >{{"You're not connected to webSocket. You won't receive realtime notification/s." | translate}} {{"Please" | translate}} <u style="cursor: pointer;" ng-click="reload()">{{"reload" | translate}}</u>.</h6> 
+                      </div>
+                      <a title="" href="{{data.reservation_link ? data.reservation_link : curr_loc}}" ng-click="addToViewed(data.notification_id)" ng-repeat="data in MyData.collection track by $index">
+  						          <span class="badge red-skin" ng-show="!data.viewed" >N</span> {{data.message | translate: data.data | searchAndFormatDate}}
+                      </a>
+                    </div>
+                    <span ng-show="MyData.collection.length == 0 && !WebSocketError"><h6>{{ "No Notification Today" | translate | uppercase }}<!--No notification today--></h6></span>
+                    <a class="view-all" ng-click="to_notification();">{{ "View all Notifications" | translate | uppercase }}<!--VIEW ALL NOTIFICATIONS--></a>
+                </div>
+            </li>
+        </ul>
+  </div>
+  <div class="topbar-menu-custom hidden-xs"><h5><span id="getday"></span><span class="colonsep"> : </span><span id="clock"></span><span class="colonsep"> : </span><span id="getdate"></span></h5></div>
+  <div class="topbar-menu-custom hidden-xs"><h5 style="color: #cccccc !important;">Hi {{ fname }}, {{"Welcome back" | translate }}</h5></div>
+  <!--
+  <div class="topbar-menu-custom"><h5 style="color: #cccccc !important;"><span ng-click="changeLanguage('en')" class="cursor-pointer" ng-class="{'activeLanguage' :lang == 'en'}">EN</span> <span ng-click="changeLanguage('pt')" class="cursor-pointer" ng-class="{'activeLanguage' :lang == 'pt'}">PT</span></h5></div>
+  -->
+  <div class="topbar-menu-custom" ng-hide="true">
+    <h6>
+      <span class="flag_lang cursor-pointer flag flag-gb" ng-class="{'active_flag_lang' :lang == 'en'}" ng-click="changeLanguage('en')"></span>
+      <span class="flag_lang cursor-pointer flag flag-br" ng-class="{'active_flag_lang' :lang == 'pt'}" ng-click="changeLanguage('pt')"></span>
+    </h6>
+  </div>
+  <div ng-controller="headerController" ng-hide="true" class="topbar-menu-custom">
+    <h6>
+      <span class="flag_lang cursor-pointer flag flag-ph" ng-class="{'active_flag_lang' :lang == 'ph'}"></span>
+    </h6>
+  </div>
+  
+</div><!-- Top Bar -->
+
+<header class="side-header light-skin opened-menu" onresize="myFunction()" id = "getHeaderHeight" style="width: 227.66px; top: 0px;">
+    <div class="admin-details">
+        <span style="float: none;"><img src="{{prof_pic}}" alt="" style="width: 121px; height: 121px; margin:auto; float: none; display: block; margin-top: 10px;" /></span> <!--{{prof_pic}}-->
+        <center>
+          <h3>{{ fname }} {{ lname }}</h3>
+          <h6 style="color: #797d80;">{{ title1 }}</h6>
+        </center>
+    </div>
+    <div class="menu-scroll" style="margin-top: 10px;">
+        <div class="side-menus">
+    			<nav>
+    				<ul>
+    					<li class="{{module.has_children}}" ng-repeat="module in modules">
+    						<a ng-href="{{module.modules_url}}" title=""><i class="fa {{module.icon}}"></i> <span>{{module.modules_label | translate}}</span></a>
+    						<ul>
+    							<li ng-repeat="sub_module in sub_modules | filter: {modules_id: module.module_id, true}">
+    								<a ng-href="{{sub_module.sub_modules_url}}" target="{{sub_module.sub_modules_url == 'epos' ? '_blank' : '_self'}}" title=""><i class="fa fa-circle"></i><span>{{sub_module.sub_modules_label | translate}}</span></a>
+    							</li>
+                            </ul>
+    					</li>
+    				</ul>
+    			</nav>
+        </div>
+    </div><!-- Menu Scroll -->
+</header>
+<div class="main-content" style="padding: 45px 45px 0px 265px;" ng-controller="headerController">
+	
+</div>
+
+<script type="text/ng-template" id="server.html">
+  <div class="modal-header text-center">
+    <button type="button" class="close" ng-click="cancel()"><i class="ti-close"></i></button>
+    <h5 class="modal-title" id="modal-title" style="margin-left: 21px;">{{ "SERVER ADDRESS" | translate | uppercase}}</h5>
+  </div>
+  <div class="modal-body">
+    <form name="categoryForm" category="form" validate>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <span>{{serveraddress}}/iServe/</span>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer text-center">
+    <input ng-click="cancel()" class="btn btn-success" style="width: 115px;" type="button" value="Close"/>
+  </div>
+</script>
+<script type="text/javascript">
+    angular.element(document).ready(function(){
+    
+    "use strict";
+    //***** Side Menu *****//
+      $(".side-header").on("click", ".side-menus li.menu-item-has-children > a", function(){
+		  $(this).parent().siblings().children("ul").slideUp();
+          $(this).parent().siblings().removeClass("active");
+          $(this).parent().children("ul").slideToggle();
+          $(this).parent().toggleClass("active");
+          return false;
+      });
+
+      //***** Side Menu Option *****//
+      $(document).on("click", '.menu-options', function(){
+        $(".side-header.opened-menu").toggleClass('slide-menu');
+        $(".main-content").toggleClass('wide-content');
+        $("footer").toggleClass('wide-footer');
+        $(".menu-options").toggleClass('active');
+        //$(".menu-options").css("margin-left", "220px");
+        //$(".menu-options.active").css("margin-left", "0px");
+      });
+
+    /*** FIXED Menu APPEARS ON SCROLL DOWN ***/   
+    $(window).scroll(function() {    
+        var scroll = $(window).scrollTop();
+        if (scroll >= 10) {
+        $(".side-header").addClass("sticky");
+        }
+        else{
+        $(".side-header").removeClass("sticky");
+        $(".side-header").addClass("");
+        }
+    }); 
+
+    $(".side-menus nav > ul > li ul li > a").on("click", function(){
+        $(".side-header").removeClass("slide-menu");
+        $(".menu-options").removeClass("active");
+    });
+
+      //***** Quick Stats *****//
+      $('.show-stats').on("click", function(){
+        $(".toggle-content").addClass('active');
+      });
+     
+       //***** Quick Stats *****//
+      $('.toggle-content > span').on("click", function(){
+        $(".toggle-content").removeClass('active');
+      });
+
+      //***** Quick Stats *****//
+      $('.quick-links > ul > li > a, .quick-links > ul > li > .notif_button').on("click", function(){
+        $(this).parent().siblings().find('.dialouge').fadeOut();
+
+        if($(this).next('.dialouge').css("display") === "block"){ 
+          $(this).next('.dialouge').fadeOut();
+        } else {
+          $(this).next('.dialouge').fadeIn();
+        }
+        return false;
+      });
+
+      $("html").on("click", function(){
+        $(".dialouge").fadeOut();
+      });
+      // $(".quick-links > ul > li > a, .dialouge").on("click",function(e){
+      //       e.stopPropagation();
+      //   });
+      
+      //***** Toggle Full Screen *****//
+      function goFullScreen() {
+        var
+            el = document.documentElement
+          , rfs =
+                 el.requestFullScreen
+              || el.webkitRequestFullScreen
+              || el.mozRequestFullScreen
+              || el.msRequestFullscreen
+
+      ;
+      rfs.call(el);
+      }
+      $("#toolFullScreen").on("click",function() {
+          goFullScreen();
+      });
+
+      //***** Side Menu *****//
+      /*$(function(){
+          $('.side-menus').slimScroll({
+              height: '400px',
+              wheelStep: 10,
+              size: '2px'
+          });
+      });*/
+      //***** Side Menu modified by reymark *****//
+      $(function(){
+        var ht = ($("#getHeaderHeight").height() - 272);
+        var ht1 = ht+'px';
+        $('.side-menus').slimScroll({
+            height: ht1,
+            wheelStep: 10,
+            size: '5px',
+            alwaysVisible: true,
+            color: '#fff'
+        });
+
+        $(window).resize(function(){
+
+          setTimeout(function() {
+            ht = ($("#getHeaderHeight").height() - 272);
+            ht1 = ht+'px';
+            $('.side-menus').height(ht1);
+            $('.menu-scroll .slimScrollDiv').height(ht1);
+          }, 50);
+        });
+
+      });
+
+      $(".data-attributes span").peity("donut");
+});
+
+
+var d = new Date();
+    var weekday = new Array(7);
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+    var n = weekday[d.getDay()];
+    document.getElementById("getday").innerHTML = "{{ '"+n+"' | translate}}";
+
+  var dd = d.getDate();
+  var mm = d.getMonth()+1; //January is 0!
+  var yyyy = d.getFullYear();
+  if(dd<10){
+      dd='0'+dd;
+  } 
+  if(mm<10){
+      mm='0'+mm;
+  } 
+  var today = dd+'/'+mm+'/'+yyyy;
+  document.getElementById("getdate").innerHTML = today;
+
+
+var updateClock = function() {
+    function pad(n) {
+        return (n < 10) ? '0' + n : n;
+    }
+
+    var now = new Date();
+    var s = pad(now.getHours()) + ':' +
+            pad(now.getMinutes());
+            /*
+               + ':' +
+            pad(now.getSeconds());
+            */
+    $('#clock').html(s);
+    var delay = 1000 - (now % 1000);
+    setTimeout(updateClock, delay);
+};
+
+window.onload=updateClock();
+
+
+
+
+</script>

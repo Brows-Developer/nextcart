@@ -1,0 +1,159 @@
+<div id="progressBar">
+	<div class="loader"></div>
+</div> 
+<div class="breadcrumbs">
+	<ul>
+		<li><a href="#/" title="">Home</a></li>
+		<li><a href="#/pages/timeline" title="">Timeline</a></li>
+	</ul>
+</div>
+
+<div class="heading-sec">
+	<div class="row">
+		<div class="col-md-4 column">
+			<div class="heading-profile">
+				<h2>Timeline</h2>
+				<span>Very detailed & featured admin.</span>
+			</div>
+		</div>
+		<div class="col-md-8 column">
+			<div class="top-bar-chart">
+				<div class="quick-report">
+					<div class="quick-report-infos">
+						<p>My Balance</p>
+						<h3>$21,561.21</h3>
+					</div>
+					<span class="bar2">5,7,4,6,9,10,13,6,5,4,7,6,5,3</span>
+				</div>
+				<div class="quick-report">
+					<div class="quick-report-infos">
+						<p>New orders</p>
+						<h3>17,561</h3>
+					</div>
+					<span class="bar">2,3,7,4,6,9,5,4,3,4,6,4,2</span>
+				</div>
+			</div><!-- Top Bar Chart -->
+		</div>
+	</div>
+</div><!-- Top Bar Chart -->
+
+<div class="panel-content">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="widget no-color">
+				<div class="activity-feed">
+					<ul class="activity-timeline">
+						<li>
+							<span class="user-device"><i class="fa fa-mobile"></i></span>
+							<div class="user-activity">
+								<div class="who-post-this">
+									<span><img src="http://placehold.it/67x67" alt="" /></span>
+									<div class="who-post-detail">
+										<h3><a href="#" title="">Diana Dare<i class="poster-status online"></i></a></h3>
+										<span><a href="#" title="">Diana Dare</a> Posted 4 photos in <a href="#" title="">Beauty album</a></span>
+										<i>2 minutes ago</i>
+									</div>
+								</div>
+								<div class="post-content">
+									<p>Dnim eiusmod high life...</p>
+									<div class="post-gallery">
+										<a href="images/preview.png" title="Preview Demo"><img src="http://placehold.it/69x69" alt="" /></a>
+										<a href="images/preview.png" title="Preview Demo"><img src="http://placehold.it/69x69" alt="" /></a>
+										<a href="images/preview.png" title="Preview Demo"><img src="http://placehold.it/69x69" alt="" /></a>
+										<a href="images/preview.png" title="Preview Demo"><img src="http://placehold.it/69x69" alt="" /></a>
+									</div>
+								</div>
+								<div class="comment-form">
+									<span><i class="fa fa-thumbs-o-up"></i> Like</span>
+									<span><i class="fa fa-comment-o"></i> Comments</span>
+									<form>
+										<textarea placeholder="Add Commemts"></textarea>	
+									</form>
+								</div>
+							</div>
+						</li>
+						<li>
+							<span class="user-device"><i class="fa fa-laptop"></i></span>
+							<div class="user-activity">
+								<div class="who-post-this">
+									<span><img src="http://placehold.it/67x67" alt="" /></span>
+									<div class="who-post-detail">
+										<h3><a href="#" title="">Janjo liyo<i class="poster-status online"></i></a></h3>
+										<span><a href="#" title="">Janjo liyo</a> Post a text in his <a href="#" title="">Profile</a></span>
+										<i>6 minutes ago</i>
+									</div>
+								</div>
+								<div class="post-content">
+									<p>Dnim eiusm ni eiusmod high life accusamus terry richardson ad squid. 3 wolfmoon officia aute, cupidatat od high life...</p>
+								</div>
+								<div class="comment-form">
+									<span><i class="fa fa-thumbs-o-up"></i> Like</span>
+									<span><i class="fa fa-comment-o"></i> Comments</span>
+									<form>
+										<textarea placeholder="Add Commemts"></textarea>	
+									</form>
+								</div>
+							</div>
+						</li>
+						<li>
+							<span class="user-device"><i class="fa fa-television"></i></span>
+							<div class="user-activity">
+								<div class="who-post-this">
+									<span><img src="http://placehold.it/67x67" alt="" /></span>
+									<div class="who-post-detail">
+										<h3><a href="#" title="">Janjo liyo<i class="poster-status online"></i></a></h3>
+										<span><a href="#" title="">Janjo liyo</a> Post a text in his <a href="#" title="">Profile</a></span>
+										<i>6 minutes ago</i>
+									</div>
+								</div>
+								<div class="post-content">
+									<p>Dnim eiusm ni eiusmod high life accusamus terry richardson ad squid. 3 wolfmoon officia aute, cupidatat od high life...</p>
+									<iframe src="https://player.vimeo.com/video/46975682?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+								</div>
+								<div class="comment-form">
+									<span><i class="fa fa-thumbs-o-up"></i> Like</span>
+									<span><i class="fa fa-comment-o"></i> Comments</span>
+									<form>
+										<textarea placeholder="Add Commemts"></textarea>	
+									</form>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div><!-- Activity Feed -->
+			</div>
+		</div>
+	</div>
+</div><!-- Panel Content -->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+    
+    "use strict";
+
+    	//*** Timeline Gallery ***//
+	    $(function() {		
+			var foo = $('.post-gallery');
+			foo.poptrox({
+				usePopupCaption: true
+			});
+		});
+	
+    	//*** Piety Mini Charts ***//
+    	$(function() {
+  			$(".bar").peity("bar", {
+			  fill: ["#ff8484"],
+			  height: ["40px"],
+			  width: ["94px"]
+			})
+
+			$(".bar2").peity("bar", {
+			  fill: ["#9797ff"],
+			  height: ["40px"],
+			  width: ["94px"]
+			})
+  		});
+
+    });
+
+</script>

@@ -1,0 +1,193 @@
+<div class="col-md-12 column">
+	<div class="widget">
+		<div class="heading-profile text-center">
+			<h2>Users</h2>
+		</div>
+	</div>
+</div>
+<div class="col-md-12 column">
+	<div class="widget" ng-class="loading ? 'loading-wait' : ''">
+		<div class="widget-controls">
+			<span class="refresh-content" ng-click="getUser()"><i class="fa fa-refresh"></i></span>
+		</div>
+		<div class="mini-stats">
+			<div class="text-right" style="padding-bottom: 20px;">
+				<button class="btn btn-md btn-primary" ng-click="addUser()"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;Add User</button>
+			</div>
+			<div class="table-responsive">
+				<table class="table table-bordered table-hover table-striped">
+					<thead>
+						<tr>
+							<!-- <th>ID</th> -->
+							<th>Username</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Role</th>
+							<th>Position</th>
+							<th class="text-center">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="user in users" style="cursor: ;">
+							<!-- <td class="text-center">{{user.users_id}}</td> -->
+							<td>{{user.username}}</td>
+							<td>{{user.firstname}}</td>
+							<td>{{user.lastname}}</td>
+							<td>{{user.role_name}}</td>
+							<td>{{user.title}}</td>
+							<td class="text-center">
+								<button class="btn btn-sm btn-info" ng-click="updateUser(user)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Edit</button>
+								<button class="btn btn-sm btn-danger" ng-click="remove(user)"><i class="fa fa-trash" aria-hidden="true"></i> Remove</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Add User MODAL -->
+<script type="text/ng-template" id="addUser.html">
+	<div class="modal-header text-center">
+		<button type="button" class="close" ng-click="cancel()"><i class="ti-close"></i></button>
+		<h5 class="modal-title" id="modal-title" style="margin-left: 21px;">User Details</h5>
+	</div>
+
+	<div class="modal-body">
+		<form name="maintenanceForm" role="form" novalidate>
+			<div class="row">
+		        <div class="col-xs-6 col-sm-6 col-md-6">
+		        	<div class='form-group'>
+			            <label class="control-label" >First Name: </label>
+						<input type="text" class="form-control" ng-model="users.firstname">	
+		        	</div>
+		        </div>
+		        <div class="col-xs-6 col-sm-6 col-md-6">
+		        	<div class='form-group'>
+						<label class="control-label" >Last Name: <span ng-style="{'background-color': details.hexcolor}" class="colorPreview"> &nbsp;</span></label>	
+						<input type="text" class="form-control" ng-model="users.lastname">	
+		        	</div>
+		        </div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 col-sm-6 col-md-6">
+		        	<div class='form-group'>
+			            <label class="control-label" >Tile/Position:</label>
+						<input type="text" class="form-control" ng-model="users.title">
+		        	</div>
+					</div>
+		        <div class="col-xs-6 col-sm-6 col-md-6">
+		        	<div class='form-group'>
+			            <label class="control-label" >Role:<span style="color: #ff0000; font-size: 15px;">*</span> </label>
+						<select class="form-control" ng-model="users.role">
+							<option></option>
+							<option ng-repeat="role in roles" value="{{role.role_id}}">
+									{{role.role_name}}
+							</option>
+						</select>
+		        	</div>
+		        </div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12" ng-show="post_response.exist == 1">
+					<div style="color: #ff0000;">
+						<p style="color: #ff0000; font-weight: 700;">{{post_response.message}}</p>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+		        	<div class='form-group'>
+			            <label class="control-label" >Username:<span style="color: #ff0000; font-size: 15px;">*</span> </label>
+						<input type="text" class="form-control" ng-model="users.username">
+		        	</div>
+		        </div>
+				<div class="col-xs-12 col-sm-12 col-md-12" ng-show="users.password != users.confirm_password">
+					<div style="color: #ff0000;">
+						<p style="color: #ff0000; font-weight: 700;">Passwords doesn't match. Make sure the password is matched</p>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+		        	<div class='form-group'>
+			            <label class="control-label" >Password:<span style="color: #ff0000; font-size: 15px;">*</span></label>
+						<input type="password" class="form-control" ng-model="users.password">
+		        	</div>
+		        </div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+		        	<div class='form-group'>
+			            <label class="control-label" >Confirm Password:<span style="color: #ff0000; font-size: 15px;">*</span></label>
+						<input type="password" class="form-control" ng-model="users.confirm_password">
+		        	</div>
+		        </div>
+			</div>
+		</form>
+	
+	</div>
+
+	<div class="modal-footer text-center">
+		<input class="btn btn-success" style="width: 115px;" type="button" ng-click="saveUser(users)" ng-disabled="!users.username || !users.role || (!users.password || users.password != users.confirm_password)" value="Save"/>
+	</div>
+</script>
+<!-- END OF Add User MODAL -->
+<!-- Add User MODAL -->
+<script type="text/ng-template" id="updateUser.html">
+	<div class="modal-header text-center">
+		<button type="button" class="close" ng-click="cancel()"><i class="ti-close"></i></button>
+		<h5 class="modal-title" id="modal-title" style="margin-left: 21px;">User Details</h5>
+	</div>
+
+	<div class="modal-body">
+		<form name="maintenanceForm" role="form" novalidate>
+			<div class="row">
+		        <div class="col-xs-6 col-sm-6 col-md-6">
+		        	<div class='form-group'>
+			            <label class="control-label" >First Name: </label>
+						<input type="text" class="form-control" ng-model="users.firstname">	
+		        	</div>
+		        </div>
+		        <div class="col-xs-6 col-sm-6 col-md-6">
+		        	<div class='form-group'>
+						<label class="control-label" >Last Name: <span ng-style="{'background-color': details.hexcolor}" class="colorPreview"> &nbsp;</span></label>	
+						<input type="text" class="form-control" ng-model="users.lastname">	
+		        	</div>
+		        </div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 col-sm-6 col-md-6">
+		        	<div class='form-group'>
+			            <label class="control-label" >Tile/Position:</label>
+						<input type="text" class="form-control" ng-model="users.title">
+		        	</div>
+					</div>
+		        <div class="col-xs-6 col-sm-6 col-md-6">
+		        	<div class='form-group'>
+			            <label class="control-label" >Role:<span style="color: #ff0000; font-size: 15px;">*</span> </label>
+						<select class="form-control" ng-model="users.role">
+							<option></option>
+							<option ng-repeat="role in roles" value="{{role.role_id}}">
+									{{role.role_name}}
+							</option>
+						</select>
+		        	</div>
+		        </div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12" ng-show="post_response.exist == 1">
+					<div style="color: #ff0000;">
+						<p style="color: #ff0000; font-weight: 700;">{{post_response.message}}</p>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+		        	<div class='form-group'>
+			            <label class="control-label" >Username:<span style="color: #ff0000; font-size: 15px;">*</span> </label>
+						<input type="text" class="form-control" ng-model="users.username">
+		        	</div>
+		        </div>
+			</div>
+		</form>
+	
+	</div>
+
+	<div class="modal-footer text-center">
+		<input class="btn btn-success" style="width: 115px;" type="button" ng-click="saveUser(users)" ng-disabled="!users.username || !users.role" value="Save"/>
+	</div>
+</script>
+<!-- END OF Add User MODAL -->

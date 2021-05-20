@@ -1,0 +1,99 @@
+<div class="heading-sec">
+	<div class="row">
+		<div class="col-md-12 column">
+			<div class="widget">
+				<div class="heading-profile text-center">
+					<h2 ng-if =" notif_or_log == 'notification' ">{{ "Notification List" | translate }}<!--Notification List--></h2>
+					<h2 ng-if =" notif_or_log == 'activity-log' ">{{ "Activity Log" | translate }}<!--Activity Log--></h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- Top Bar Chart -->
+
+<div class="panel-content">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="widget">
+				<div class="mini-stats ">
+					<div class="row">
+						<div class="col-md-9 form-inline" style="">
+							<span class="">
+								<!--select class="form-control" ng-model="notification_type">
+									<option >All</option>
+									<option ng-repeat="ntype in notification_types" ng-value="ntype.notification_type_id">{{ntype.notification_type_name}}</option>
+								</select-->
+								<select  class="form-control"
+								    ng-model="notification_type" 
+								    ng-options="ntype.notification_type_name for ntype in notification_types track by ntype.notification_type_id">
+								    <option value="">{{ "All" | translate }}<!--All--></option>
+								</select>
+							</span>
+							<span class="input-group">
+								<input type="text" class="form-control" uib-datepicker-popup="{{dateFormatString}}" ng-model="checkin_date" is-open="checkinopen" datepicker-options="dateOptionsCI" ng-required="true" close-text="Close"/>
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="open1($event,'checkinopen')"><i class="fa fa-calendar"></i></button>
+								</span>
+							</span>
+							<span class="input-group">&nbsp;-&nbsp;</span>
+							<span class="input-group">
+								<input type="text" class="form-control" uib-datepicker-popup="{{dateFormatString}}" ng-model="checkout_date" is-open="checkoutopen" datepicker-options="dateOptionsCI" ng-required="true" close-text="Close" />
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="open1($event,'checkoutopen')"><i class="fa fa-calendar"></i></button>
+								</span>
+							</span>
+							<span class="input-group">
+								<button class="btn btn-success" ng-click="filter_notification()">{{ "View" | translate | uppercase }}<!--VIEW--></button>
+							</span>
+						</div>
+						<div class="col-md-3 form-inline" style="">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Search" ng-model="searchKeyword">
+								<div class="input-group-btn">
+								  <button class="btn btn-default" type="submit">
+								    <i class="fa fa-search"></i>
+								  </button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<br>
+								
+					<div class="row">
+						<div class="table-responsive {{getList_Res_loading}}">
+							<table class="table table-striped table-responsive"> <!-- table-striped -->
+								<thead>
+									<tr>
+										<th class="text-center">{{ "Type" | translate }}<!--Type--></th>
+										<th class="text-center">{{ "Message" | translate }}<!--Message--></th>
+										<th class="text-left">{{ "Date/Time" | translate }}<!--Date/Time--></th>
+										<th class="text-left">{{ "Inserted By" | translate }}<!--Inserted by--></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-click="go_to_reservation(ntf_data.reservation_link)" ng-repeat="ntf_data in notification_data | filter:searchKeyword as notification_filtered" ng-style="{'cursor': ( ntf_data.reservation_link != '' ? 'pointer' : 'default' ) }">
+										<td>{{ntf_data.notification_type_name}}</td>
+										<td>{{ntf_data.message | translate: ntf_data.data | searchAndFormatDate}}</td>
+										<!-- <td>{{ntf_data.inserted_datetime | date : "D, d M Y H:i:s" }}</td> -->
+										<td>{{ntf_data.inserted_datetime | dateToISO | date : "EEE, d MMM y HH:mm:ss" }}</td>
+										<td>{{ntf_data.user_name}}</td>
+									</tr>
+								</tbody>
+							</table>
+
+						</div>
+						<div ng-show="notification_filtered.length == 0" class="text-center" style="padding-bottom: 30px;"> <h4>{{ "No log found" | translate }}<!--No log found--></h4> </div>
+						
+						<!--
+						<div>{{"Notif_loggedin" | translate: dataToTranslate}}</div>
+						<p translate="Notif_loggedin" translate-values="{ username: 'Gwion Support'}"></p>
+						-->
+
+						
+					</div>
+				</div>
+			</div>		
+		</div>
+	</div>
+</div><!-- Panel Content

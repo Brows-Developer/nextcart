@@ -1,0 +1,65 @@
+<div class="col-md-12 column">
+	<div class="widget">
+		<div class="heading-profile text-center">
+			<h2>Currency</h2>
+		</div>
+	</div>
+</div>
+<div class="col-md-12 column">
+	<div class="widget" ng-class="loading ? 'loading-wait' : ''">
+		<div class="widget-controls">
+			<span class="refresh-content" ng-click="getRoles()"><i class="fa fa-refresh"></i></span>
+		</div>
+		<div class="mini-stats">
+			<!--
+			<div class="text-right" style="padding-bottom: 20px;">
+				<button class="btn btn-md btn-primary" ng-click="addRole()"><i class="fa fa-sitemap" aria-hidden="true"></i>&nbsp;&nbsp;Add Role</button>
+			</div>
+			<div class="table-responsive">
+				<table class="table table-bordered table-hover table-striped">
+					<thead>
+						<tr>
+							<th>Role Name</th>
+							<th>Start Page</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="role in roles" style="cursor: pointer;" ng-click="showUpdate(role)">
+							<td>{{role.role_name}}</td>
+							<td>{{role.modules_label}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			-->
+			<div class="col-lg-6 col-md-6">
+				<h5 for="InputClients">Symbol&nbsp;<span class="color-required">*</span></h5>
+				<div class="form-group form-inline" > 
+					<input autocomplete="off" class="form-control" type="text" name="" ng-model="currency_symbol" >
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6">
+				<h5 for="InputClients">Code&nbsp;<span class="color-required">*</span></h5>
+				<div class="form-group form-inline" > 
+					<input autocomplete="off" class="form-control" type="text" name="" ng-model="currency_code" >
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6">
+				<h5 for="InputClients">Decimal Mark&nbsp;<span class="color-required">*</span></h5>
+				<div class="form-group form-inline" > 
+					<input autocomplete="off" class="form-control" type="text" name="" ng-model="currency_decimal_mark" >
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6">
+				<h5 for="InputClients">Thousands Separator&nbsp;<span class="color-required">*</span></h5>
+				<div class="form-group form-inline" > 
+					<input autocomplete="off" class="form-control" type="text" name="" ng-model="currency_thousands_separator" >
+				</div>
+			</div>
+			<div class="col-lg-12 col-md-12">
+				<button type="submit" class="btn btn-sm btn-success pull-right" style="width: 94px;" ng-click="saveCurrency()" >SAVE</button>
+			</div>
+
+		</div>
+	</div>
+</div>

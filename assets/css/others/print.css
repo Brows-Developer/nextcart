@@ -1,0 +1,19 @@
+* {
+	font-size: 12px!important;
+	font-family: Open Sans!important;
+}
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.color-red {
+	color: #ff0000!important;
+}
+.color-blue {
+	color: #0000ff!important;
+}

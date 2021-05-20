@@ -1,0 +1,158 @@
+<div id="progressBar">
+	<div class="loader"></div>
+</div> 
+<div class="breadcrumbs">
+	<ul>
+		<li><a href="#/" title="">Home</a></li>
+		<li><a href="#/pages/setting" title="">Profile Setting</a></li>
+	</ul>
+</div>
+
+<div class="heading-sec">
+	<div class="row">
+		<div class="col-md-4 column">
+			<div class="heading-profile">
+				<h2>Profile Setting</h2>
+				<span>Very detailed & featured admin.</span>
+			</div>
+		</div>
+		<div class="col-md-8 column">
+			<div class="top-bar-chart">
+				<div class="quick-report">
+					<div class="quick-report-infos">
+						<p>My Balance</p>
+						<h3>$21,561.21</h3>
+					</div>
+					<span class="bar2">5,7,4,6,9,10,13,6,5,4,7,6,5,3</span>
+				</div>
+				<div class="quick-report">
+					<div class="quick-report-infos">
+						<p>New orders</p>
+						<h3>17,561</h3>
+					</div>
+					<span class="bar">2,3,7,4,6,9,5,4,3,4,6,4,2</span>
+				</div>
+			</div><!-- Top Bar Chart -->
+		</div>
+	</div>
+</div><!-- Top Bar Chart -->
+
+<div class="panel-content">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="billing-sec">
+				<div class="row">
+					<div class="col-md-6 field">
+						<label>Your Name <span>*</span> </label>
+						<input type="text" value="Brian" />
+					</div>
+					<div class="col-md-6 field">
+						<label>Last Name <span>*</span> </label>
+						<input type="text" value="Kelly"  />
+					</div>
+					<div class="col-md-12">
+						<div class="widget-title">
+							<h3>Show Social Button</h3>
+							<span>Enable or Disable Social Buttons</span>
+							<div class="show-elements">
+								<div class="toggleWrapper">
+								  <input type="checkbox" id="dn" class="dn"/>
+								  <label for="dn" class="toggle"><span class="toggle__handler"></span></label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 field">
+						<label>Add Facebook URL <span>*</span> </label>
+						<input type="text" value="http://m.facebook.com/webinane"  />
+					</div>
+					<div class="col-md-4 field">
+						<label>Add Twitter URL <span>*</span> </label>
+						<input type="text" value="http://m.twitter.com/webinane"  />
+					</div>
+					<div class="col-md-4 field">
+						<label>Add Google URL <span>*</span> </label>
+						<input type="text" value="http://m.google.com/webinane"  />
+					</div>
+					<div class="col-md-12 field">
+						<div class="widget-title">
+							<h3>Show Tweets Widgets</h3>
+							<span>Enable or Disable Tweet Widget</span>
+							<div class="show-elements">
+								<div class="toggleWrapper">
+								  <input type="checkbox" id="dndo" class="dn"/>
+								  <label for="dndo" class="toggle"><span class="toggle__handler"></span></label>
+								</div>
+							</div>
+						</div>
+						<label>Add Google URL <span>*</span> </label>
+						<input type="text" value="http://m.google.com/webinane"  />
+					</div>
+					<div class="col-md-4">
+						<div class="widget-title">
+							<h3>Enable Profile Cover</h3>
+							<span>Enable or Disable Profile Cover</span>
+							<div class="show-elements">
+								<div class="toggleWrapper">
+								  <input type="checkbox" id="dnd" class="dn"/>
+								  <label for="dnd" class="toggle"><span class="toggle__handler"></span></label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="widget-title">
+							<h3>Enable Friends Lists</h3>
+							<span>Enable or Disable Friends Lists</span>
+							<div class="show-elements">
+								<div class="toggleWrapper">
+								  <input type="checkbox" id="dndd" class="dn"/>
+								  <label for="dndd" class="toggle"><span class="toggle__handler"></span></label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="widget-title">
+							<h3>Enable My Locations</h3>
+							<span>Enable or Disable  My Locations</span>
+							<div class="show-elements">
+								<div class="toggleWrapper">
+								  <input type="checkbox" id="dnddd" class="dn"/>
+								  <label for="dnddd" class="toggle"><span class="toggle__handler"></span></label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<button type="submit">Save Settings Now</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- Panel Content -->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+    
+    "use strict";
+
+    	//*** Piety Mini Charts ***//
+    	$(function() {
+  			$(".bar").peity("bar", {
+			  fill: ["#ff8484"],
+			  height: ["40px"],
+			  width: ["94px"]
+			})
+
+			$(".bar2").peity("bar", {
+			  fill: ["#9797ff"],
+			  height: ["40px"],
+			  width: ["94px"]
+			})
+  		});
+
+    });
+
+</script>

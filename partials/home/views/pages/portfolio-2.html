@@ -1,0 +1,197 @@
+<div id="progressBar">
+	<div class="loader"></div>
+</div> 
+<div class="breadcrumbs">
+	<ul>
+		<li><a href="#/" title="">Home</a></li>
+		<li><a href="#/pages/portfolio-2" title="">Portfolio 2</a></li>
+	</ul>
+</div>
+
+<div class="heading-sec">
+	<div class="row">
+		<div class="col-md-4 column">
+			<div class="heading-profile">
+				<h2>Portfolio 2</h2>
+				<span>Very detailed & featured admin.</span>
+			</div>
+		</div>
+		<div class="col-md-8 column">
+			<div class="top-bar-chart">
+				<div class="quick-report">
+					<div class="quick-report-infos">
+						<p>My Balance</p>
+						<h3>$21,561.21</h3>
+					</div>
+					<span class="bar2">5,7,4,6,9,10,13,6,5,4,7,6,5,3</span>
+				</div>
+				<div class="quick-report">
+					<div class="quick-report-infos">
+						<p>New orders</p>
+						<h3>17,561</h3>
+					</div>
+					<span class="bar">2,3,7,4,6,9,5,4,3,4,6,4,2</span>
+				</div>
+			</div><!-- Top Bar Chart -->
+		</div>
+	</div>
+</div><!-- Top Bar Chart -->
+
+<div class="panel-content">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="widget">
+				<div class="product-filter">
+					<section id="options">
+						<div class="option-isotop">
+						  <ul id="filter2" class="option-set" data-option-key="filter">
+							 <li><a itemprop="url" href="#all" data-option-value="*" class="selected"><i class="fa fa-pencil "></i>Random</a></li>
+							 <li><a itemprop="url" href="#arts" data-option-value=".shirts"><i class="fa fa-codepen"></i>T-Shirts</a></li>
+							 <li><a itemprop="url" href="#graphic" data-option-value=".jeans"><i class="fa fa-dribbble"></i>Jeans</a></li>
+							 <li><a itemprop="url" href="#graphic" data-option-value=".shoes"><i class="fa fa-object-group"></i>Shoes</a></li>
+						  </ul>
+						</div>
+					</section><!-- FILTER BUTTONS -->
+					<div class="row">
+						<div class="top-margin">
+							<div class="filter-products">
+								<div class="shirts col-md-3">
+									<div class="product-four">
+										<div class="product-thumb">
+											<img src="http://placehold.it/370x538" alt="" />
+										</div>
+										<h3><a title="">Summer Products Cap</a></h3>
+										<span>Designer</span>
+									</div>
+								</div>
+								<div class="jeans col-md-3">
+									<div class="product-four">
+										<div class="product-thumb">
+											<img src="http://placehold.it/370x538" alt="" />
+										</div>
+										<h3><a title="">Do what you want</a></h3>
+										<span>Developer</span>
+									</div>
+								</div>
+								<div class="shoes col-md-3">
+									<div class="product-four">
+										<div class="product-thumb">
+											<img src="http://placehold.it/370x538" alt="" />
+										</div>
+										<h3><a title="">Life is so Boring</a></h3>
+										<span>Coder</span>
+									</div>
+								</div>
+								<div class="shoes col-md-3">
+									<div class="product-four">
+										<div class="product-thumb">
+											<img src="http://placehold.it/370x538" alt="" />
+										</div>
+										<h3><a title="">Where is my mobile</a></h3>
+										<span>Art Designer</span>
+									</div>
+								</div>
+								<div class="shirts col-md-3">
+									<div class="product-four">
+										<div class="product-thumb">
+											<img src="http://placehold.it/370x538" alt="" />
+										</div>
+										<h3><a title="">World Strogest USA</a></h3>
+										<span>Web Developer</span>
+									</div>
+								</div>
+								<div class="jeans col-md-3">
+									<div class="product-four">
+										<div class="product-thumb">
+											<img src="http://placehold.it/370x538" alt="" />
+										</div>
+										<h3><a title="">Wild animal in</a></h3>
+										<span>Web Analyst</span>
+									</div>
+								</div>
+								<div class="jeans col-md-3">
+									<div class="product-four">
+										<div class="product-thumb">
+											<img src="http://placehold.it/370x538" alt="" />
+										</div>
+										<h3><a title="">Wild in everywhere</a></h3>
+										<span>Web Analyst</span>
+									</div>
+								</div>
+								<div class="jeans col-md-3">
+									<div class="product-four">
+										<div class="product-thumb">
+											<img src="http://placehold.it/370x538" alt="" />
+										</div>
+										<h3><a title="">Animal everywhere</a></h3>
+										<span>Web Analyst</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- Panel Content -->
+
+<script type="text/javascript">
+	$(window).load(function(){
+		$(function(){
+			var $portfolio = $('.filter-products');
+			$portfolio.isotope({
+			masonry: {
+			}
+		});
+		var $optionSets = $('#options .option-set'),
+			$optionLinks = $optionSets.find('a');
+			$optionLinks.click(function(){
+			var $this = $(this);
+			// don't proceed if already selected
+			if ( $this.hasClass('selected') ) {
+			return false;
+			}
+			var $optionSet = $this.parents('.option-set');
+			$optionSet.find('.selected').removeClass('selected');
+			$this.addClass('selected');
+			var options = {},
+			key = $optionSet.attr('data-option-key'),
+			value = $this.attr('data-option-value');
+			// parse 'false' as false boolean
+			value = value === 'false' ? false : value;
+			options[ key ] = value;
+			if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
+			// changes in layout modes need extra logic
+			changeLayoutMode( $this, options )
+			} else {
+			// otherwise, apply new options
+			$portfolio.isotope( options );
+			}
+			return false;
+			});
+		});
+	});
+
+    $(document).ready(function(){
+    
+    "use strict";
+
+    	//*** Piety Mini Charts ***//
+    	$(function() {
+  			$(".bar").peity("bar", {
+			  fill: ["#ff8484"],
+			  height: ["40px"],
+			  width: ["94px"]
+			})
+
+			$(".bar2").peity("bar", {
+			  fill: ["#9797ff"],
+			  height: ["40px"],
+			  width: ["94px"]
+			})
+  		});
+
+    });
+
+</script>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" data-ng-app="tutorialWebApp"> <!--<![endif]-->
+<head>
+
+    <!-- Meta-Information -->
+    <title ng-controller="TitleController" ng-bind="Page.title();">NextCart</title>
+	<link ng-controller="TitleController" rel="shortcut icon" type="image/x-icon" href="{{ Page.favicon(); }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv='Content-Type' content='text/html'>
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/others/icons.css">
+    <link rel="stylesheet" href="assets/css/others/main.css">
+    <link rel="stylesheet" href="assets/css/others/responsive.css">
+    <link rel="stylesheet" href="assets/css/others/colorpicker.css" />
+    <link rel="stylesheet" href="assets/css/others/select.min.css"> 
+
+	<link rel="stylesheet" href="assets/css/angular/angularjs-color-picker.min.css" />
+	<link rel="stylesheet" href="assets/css/angular/angularjs-color-picker-bootstrap.min.css" />
+
+    <link rel="stylesheet" href="assets/css/Country-Flags-Responsive-CSS-Sprite/css/flags.css">
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Our Website Content Goes Here -->
+    <div class="infinite-loader" ng-show="iAmLoading" loading></div>
+    <div data-ng-include='"templates/header.html"'></div>
+    <div class="main-content" data-ng-view style="padding-top: 2px;"></div>
+    <div data-ng-include='"templates/footer.html"'></div>
+
+<!-- Vendor: Javascripts -->
+<script src="assets/js/jquery-2.1.3.js"></script>
+<script src="assets/js/bootstrap/bootstrap.min.js"></script>
+
+<!-- Vendor: Angular, followed by our custom Javascripts -->
+<!-- <script src="js/default/angular-route.min.js"></script> -->
+<!-- <script src="https://maps.google.com/maps/api/js?sensor=false"></script> -->
+
+<script src="assets/js/angular/angular.min.js"></script>
+<script src="assets/js/angular/angular-route.min.js"></script>
+<script src="assets/js/angular/angular-cookies.min.js"></script>
+<script src="assets/js/angular/angular-animate.min.js"></script>
+<script src="assets/js/angular/angular-touch.min.js"></script>
+<script src="assets/js/angular/angular-filter.js"></script>
+<script src="assets/js/angular/angularjs-color-picker.min.js"></script>
+<script src="assets/js/angular/angular-websocket.min.js"></script>
+<script src="assets/js/angular/angular-translate.min.js"></script>
+<script src="assets/js/angular/angular-translate-loader-static-files.min.js"></script>
+
+<script src="assets/js/bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="assets/js/bootstrap/bootstrap-colorpicker-module.min.js"></script>
+
+<script src="assets/js/others/select.min.js"></script>   
+<script src="assets/js/others/tinycolor.js"></script>
+<script src="assets/js/others/tmhDynamicLocale.min.js"></script>
+
+<!-- Our Website Javascripts -->
+<script src="assets/js/default/app.js"></script>
+<script src="assets/js/default/main.js"></script>
+<script src="assets/js/default/common.js"></script>
+<script src="assets/js/default/header.js"></script>
+<script src="assets/js/default/title.js"></script>
+
+<script src="partials/authentication/services.js"></script>
+<script src="partials/authentication/controllers.js"></script>
+
+<script src="partials/settings/user_controller.js"></script> 
+<script src="partials/settings/role_controller.js"></script>
+
+<script src="partials/notification/controllers.js"></script> 
+<script src="partials/settings/currency_controller.js"></script>
+
+<script src="partials/home/controllers.js"></script>
+</body>
+</html>

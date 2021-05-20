@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Testing Ratchet</title>
+</head>
+<body onload="init()">
+
+<div id="status">Not Connected</div>
+<br>
+
+<input type="text" name="msg" id="msg"/ > 
+<input type="button" onclick="send(document.getElementById('msg').value);" value="Send" />
+
+<br>
+<h3>Messages</h3>
+<ul id="chats"> </ul>
+
+<script type="text/javascript">
+
+	var conn;
+	function init(){
+	
+		document.getElementById("status").innerHTML = "<span style='color:green'>Connecting</span>";
+		
+		conn = new WebSocket('ws://localhost:19001');
+		conn.onopen = function(e) {
+		    console.log("Connection established!");
+		    document.getElementById("status").innerHTML = "<span style='color:green'>Connected</span>";
+		};
+
+		conn.onmessage = function(e) {
+		    msg = JSON.parse(e.data);
+		    console.log( msg );
+
+			var para = document.createElement("li");                       // Create a <p> node
+			var t = document.createTextNode(msg);      // Create a text node
+			para.appendChild(t);                                          // Append the text to <p>
+			document.getElementById("chats").appendChild(para); 	    
+		};		
+		
+		conn.onerror = function(e){
+			console.log(e);
+			document.getElementById("status").innerHTML = "<span style='color:red'>Error in connecting</span>";
+		}
+	}
+
+	function send(msg) {
+		conn.send(JSON.stringify(msg));
+		document.getElementById('msg').value = '';
+	}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<div class="conten-block">
+    <div class="text-center">
+      <img alt="Hotel PMS" style="width: 56%; min-height: 75px;" src="images/ssv-logo.png">
+    </div>
+      <h3 style="text-align: center">{{"Registration Form" | translate | uppercase}}</h3>
+    <br/>
+    <br/>
+      <div>
+          <table cellpadding="0" style="border: 1px solid #ccc; width: 100%; border-collapse: collapse; font-size: 1em" >
+            <thead>
+              <tr style="border: 1px solid #ccc; border-collapse: collapse">
+                <td style="border: 1px solid #ccc; border-collapse: collapse; " colspan="2">
+                  <div class="greyed" style="background-color: #ccc;">
+                    <b style="padding: 5px 5px;">{{"Full Name" | translate | uppercase}}</b>
+                  </div>
+                  &nbsp; {{details.name}}
+                </td>
+                <td style="border: 1px solid #ccc; border-collapse: collapse;  ">
+                  <div class="greyed" style="background-color: #ccc;">
+                    <b style="padding: 5px 5px;">{{"No. of Kids & Adults" | translate | uppercase}}</b>
+                  </div>
+                  &nbsp;
+                </td>
+                <td style="border: 1px solid #ccc; border-collapse: collapse; text-align: center;">
+                  <div class="greyed" style="background-color: #ccc; text-align: left!important;">
+                    <b style="padding: 5px 5px;">{{"Studio No." | translate | uppercase}}</b>
+                  </div>
+                  &nbsp; {{details.room_name}}
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+			  <tr style="border: 1px solid #ccc; border-collapse: collapse;">
+                <td style="border: 1px solid #ccc; border-collapse: collapse; text-align: center;" colspan="2">
+                  <div class="greyed" style="background-color: #ccc; text-align: left!important">
+                    <b style="padding: 5px 5px;">{{"Booking Date & Time" | translate | uppercase}}</b>
+                  </div>
+                  &nbsp; {{details.booking_date_time | searchAndFormatDate}}
+                </td>
+                <td style="border: 1px solid #ccc; border-collapse: collapse; text-align: center;">
+                  <div class="greyed" style="background-color: #ccc; text-align: left!important;">
+                    <b style="padding: 5px 5px;">{{"Booking Source" | translate | uppercase}}</b>
+                  </div>
+                  &nbsp; {{details.booking_source}}
+                </td>
+				<td style="border: 1px solid #ccc; border-collapse: collapse; text-align: center;">
+                  <div class="greyed" style="background-color: #ccc; text-align: left!important;">
+                    <b style="padding: 5px 5px;">{{"Booking Reference" | translate | uppercase}}</b>
+                  </div>
+				  &nbsp; {{details.booking_reference}}
+                </td>
+              </tr>
+              <tr style="border: 1px solid #ccc; border-collapse: collapse;">
+                <td style="border: 1px solid #ccc; border-collapse: collapse;">
+                  <div class="greyed" style="background-color: #ccc;">
+                    <b style="padding: 5px 5px;">{{"Arrival Date & Time" | translate | uppercase}}</b>
+                  </div>
+                  &nbsp; 
+                </td>
+				<td style="border: 1px solid #ccc; border-collapse: collapse; text-align: center;">
+                  <div class="greyed" style="background-color: #ccc; text-align: left!important;">
+                    <b style="padding: 5px 5px;">{{"Checkin Date" | translate | uppercase}}</b>
+                  </div>
+                  &nbsp; {{details.checkin_date | ddmmyyToDate}}
+                </td>
+                <td style="border: 1px solid #ccc; border-collapse: collapse; text-align: center;">
+                  <div class="greyed" style="background-color: #ccc; text-align: left!important;">
+                    <b style="padding: 5px 5px;">{{"Departure Date" | translate | uppercase}}</b>
+                  </div>
+                  &nbsp; {{details.departure_date | ddmmyyToDate}}
+                </td>
+				<td style="border: 1px solid #ccc; border-collapse: collapse; text-align: center;">
+                  <div class="greyed" style="background-color: #ccc; text-align: left!important;">
+                    <b style="padding: 5px 5px;">{{"Nights" | translate | uppercase}}</b>
+                  </div>
+                  {{details.nights}}
+                </td>
+              </tr>
+              <tr style="border: 1px solid #ccc; border-collapse: collapse;  ">
+                <td style="border: 1px solid #ccc; border-collapse: collapse;  ">
+                  <div class="greyed" style="background-color: #ccc;">
+                    <b style="padding: 5px 5px;">{{"Date of Birth" | translate | uppercase}}</b>
+                  </div>
+                  &nbsp; {{details.birth_date}}
+                </td>
+                <td style="border: 1px solid #ccc; border-collapse: collapse;  ">
+                  <div class="greyed" style="background-color: #ccc;">
+                    <b style="padding: 5px 5px;">{{"Nationality" | translate | uppercase}}</b>
+                  </div>
+                  &nbsp; 
+                </td>
+                <td style="border: 1px solid #ccc; border-collapse: collapse;  ">
+                  <div class="greyed" style="background-color: #ccc;">
+                    <b style="padding: 5px 5px;">{{"Room Category" | translate | uppercase}}</b>
+                  </div>
+                  &nbsp; {{details.room_type_name}}
+                </td>
+                <td style="border: 1px solid #ccc; border-collapse: collapse; text-align: right;">
+                  <div class="greyed" style="background-color: #ccc; text-align: left!important;">
+                    <b style="padding: 5px 5px;">{{"Total Rate" | translate | uppercase}}</b>
+                  </div>
+                  {{details.rate_total | currency: details.currency_sign}}&nbsp; 
+                </td>
+              </tr>
+              <tr style="border: 1px solid #ccc; border-collapse: collapse;">
+                <td style="border: 1px solid #ccc; border-collapse: collapse; vertical-align:top;" colspan="2">
+                  <div class="greyed" style="background-color: #ccc;"><b style="padding: 5px 5px;"></b></div>{{"Email Address" | translate | uppercase}}
+                  &nbsp; {{details.email}}
+                </td>
+                <td style="border: 1px solid #ccc; border-collapse: collapse; text-align: center;" colspan="2">
+                  <div class="greyed" style="background-color: #ccc; text-align: left!important;"><b style="padding: 5px 5px;">{{"Mobile Number" | translate | uppercase}}</b></div>
+					{{details.mobile_number}} <p style="color:#cccccc; margin-top: 5px; margin-bottom: 5px;" ng-if="details.mobile_number == '' || details.mobile_number == null">+&nbsp;<span style="border: solid 1px #cccccc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;<span style="border-bottom: solid 1px #cccccc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+                </td>
+              </tr>
+        <tr>
+          <td style="border: 1px solid #ccc; border-collapse: collapse;" colspan="4">
+            <div class="greyed" style="background-color: #ccc;"><b style="padding: 5px 5px;">{{"Complete Address" | translate | uppercase}}</b></div>
+            <p style="padding-left: 5px; color: #222222; margin: 0;">{{"House No./Street" | translate}}: {{details.home_address}} <span ng-if="details.home_address == ''" style="text-decoration: underline; text-decoration-color: #cccccc;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+            <p style="padding-left: 5px; color: #222222; margin: 0;">{{"City / State" | translate}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{details.city}} <span ng-if="details.city == ''" style="text-decoration: underline; text-decoration-color: #cccccc;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+			<p style="padding-left: 5px; color: #222222; margin: 0;">{{"Post Code" | translate}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{details.post_code}} <span ng-if="details.post_code == ''" style="text-decoration: underline; text-decoration-color: #cccccc;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+			<p style="padding-left: 5px; color: #222222; margin: 0;">{{"Country" | translate}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{details.country}} <span ng-if="details.country == ''" style="text-decoration: underline; text-decoration-color: #cccccc;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ccc; border-collapse: collapse;" colspan="4">
+			  <div class="greyed" style="background-color: #ccc;"><b style="padding: 5px 5px;">{{"Notas/Pedidos/Alergias" | translate | uppercase}}</b></div>
+			  <br/>
+			  <br/>
+			  <br/>
+			  <br/>
+			</td>
+        </tr>
+            </tbody>
+            </table>
+        <br/>
+        <br/>
+            {{"I confirm I am aware of, and agree to comply with the hotel rules and regulation." | translate }}<br/><br/>
+            {{"Signature" | translate | uppercase}}:<span style="text-decoration: underline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>  {{"Handled By" | translate | uppercase}}: <span style="text-decoration: underline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br/><br/>
+            {{"Please Note" | translate | uppercase}}:
+              <ul>
+                <li>{{"Check-Out is 12:00 NOON" | translate }}</li>
+                <li>{{"We clean your room daily, please put the 'DO NOT DISTURB' sign on your door if you not require this service for that day." | translate}}</li>
+              </ul>
+      </div>
+    </div>
+	<div style="visibility:hidden; page-break-before: always;">
+	</div>
+	<footer>
+		<div class="text-left">
+		  <img alt="Hotel PMS" style="width: 182px; min-height: 75px;" src="images/ssv-logo.png">
+		</div>
+	</footer>

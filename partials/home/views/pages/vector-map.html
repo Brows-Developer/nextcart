@@ -1,0 +1,105 @@
+<div id="progressBar">
+	<div class="loader"></div>
+</div> 
+<div class="breadcrumbs">
+	<ul>
+		<li><a href="#/" title="">Home</a></li>
+		<li><a href="#/pages/vector-map" title="">Vector Map</a></li>
+	</ul>
+</div>
+
+<div class="heading-sec">
+	<div class="row">
+		<div class="col-md-4 column">
+			<div class="heading-profile">
+				<h2>Vector Map</h2>
+				<span>Very detailed & featured admin.</span>
+			</div>
+		</div>
+		<div class="col-md-8 column">
+			<div class="top-bar-chart">
+				<div class="quick-report">
+					<div class="quick-report-infos">
+						<p>My Balance</p>
+						<h3>$21,561.21</h3>
+					</div>
+					<span class="bar2">5,7,4,6,9,10,13,6,5,4,7,6,5,3</span>
+				</div>
+				<div class="quick-report">
+					<div class="quick-report-infos">
+						<p>New orders</p>
+						<h3>17,561</h3>
+					</div>
+					<span class="bar">2,3,7,4,6,9,5,4,3,4,6,4,2</span>
+				</div>
+			</div><!-- Top Bar Chart -->
+		</div>
+	</div>
+</div><!-- Top Bar Chart -->
+
+<div class="panel-content">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="widget">
+				<div id="vector-map"></div>
+			</div>
+		</div>
+	</div>
+</div><!-- Panel Content -->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+    
+    "use strict";
+
+    	//*** Map Jvector ***//
+    	jQuery('#vector-map').vectorMap({
+          	map: 'usa_en',
+		    backgroundColor: '#ffffff',
+		    borderColor: '#818181',
+		    borderOpacity: 0.25,
+		    borderWidth: 0.25,
+		    color: '#c6d3e0',
+		    colors: {
+		        mo: '#a8b2bd',
+		        fl: '#a8b2bd',
+		        or: '#a8b2bd'
+		    },
+		    enableZoom: true,
+		    showLabels: true,
+		    hoverColor: '#b9c7d5',
+		    hoverOpacity: null,
+		    normalizeFunction: 'linear',
+		    scaleColors: ['#b6d6ff', '#005ace'],
+		    selectedColor: '#b9c7d5',
+		    selectedRegions: [],
+		    showTooltip: false,
+		    onRegionClick: function(element, code, region)
+		    {
+		        var message = 'You clicked "'
+		            + region
+		            + '" which has the code: '
+		            + code.toUpperCase();
+
+		        alert(message);
+		    }
+        });
+
+    	//*** Piety Mini Charts ***//
+    	$(function() {
+  			$(".bar").peity("bar", {
+			  fill: ["#ff8484"],
+			  height: ["40px"],
+			  width: ["94px"]
+			})
+
+			$(".bar2").peity("bar", {
+			  fill: ["#9797ff"],
+			  height: ["40px"],
+			  width: ["94px"]
+			})
+  		});
+
+    });
+
+</script>

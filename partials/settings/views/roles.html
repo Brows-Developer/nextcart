@@ -1,0 +1,131 @@
+<div class="col-md-12 column">
+	<div class="widget">
+		<div class="heading-profile text-center">
+			<h2>Roles</h2>
+		</div>
+	</div>
+</div>
+<div class="col-md-12 column">
+	<div class="widget" ng-class="loading ? 'loading-wait' : ''">
+		<div class="widget-controls">
+			<span class="refresh-content" ng-click="getRoles()"><i class="fa fa-refresh"></i></span>
+		</div>
+		<div class="mini-stats">
+			<div class="text-right" style="padding-bottom: 20px;">
+				<button class="btn btn-md btn-primary" ng-click="addRole()"><i class="fa fa-sitemap" aria-hidden="true"></i>&nbsp;&nbsp;Add Role</button>
+			</div>
+			<div class="table-responsive">
+				<table class="table table-bordered table-hover table-striped">
+					<thead>
+						<tr>
+							<!-- <th>Role ID</th> -->
+							<th>Role Name</th>
+							<th>Start Page</th>
+							<!-- <th>Action</th> -->
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="role in roles" style="cursor: pointer;" ng-click="showUpdate(role)">
+							<!-- <td class="text-center">{{role.role_id}}</td> -->
+							<td>{{role.role_name}}</td>
+							<td>{{role.modules_label}}</td>
+							<!-- <td></td> -->
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Add Role MODAL -->
+<script type="text/ng-template" id="addRole.html">
+	<div class="modal-header text-center">
+		<button type="button" class="close" ng-click="cancel()"><i class="ti-close"></i></button>
+		<h5 class="modal-title" id="modal-title" style="margin-left: 21px;">Add Role</h5>
+	</div>
+
+	<div class="modal-body">
+		<form name="maintenanceForm" role="form" novalidate>
+			<div class="row">
+		        <div class="col-xs-12 col-sm-12 col-md-12">
+		        	<div class='form-group'>
+			            <label class="control-label" >Role Name:<span style="color: #ff0000; font-size: 15px;">*</span></label>
+						<input type="text" class="form-control" ng-model="role.role_name">	
+		        	</div>
+		        </div>
+		        <div class="col-xs-12 col-sm-12 col-md-12">
+		        	<div class='form-group'>
+						<label class="control-label" >Start Page:<span style="color: #ff0000; font-size: 15px;">*</span></label>	
+						<select class="form-control" ng-model="role.start_page">
+							<option></option>
+							<option ng-repeat="page in startPage" value="{{page.modules_id}},{{page.modules_url}}">{{page.modules_label}}</option>
+						</select>
+		        	</div>
+		        </div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+		        	<div class='form-group'>
+						<label class="control-label" >Modules:<span style="color: #ff0000; font-size: 15px;">*</span></label>
+						<div class="row">
+							<div class="col-md-6 col-sm-12"  ng-repeat="module in modules">
+								<input type="checkbox" class="" ng-checked="role.ids[module.modules_id]" ng-model="role.ids[module.modules_id]" name="group" id="{{module.modules_id}}" />
+								{{module.modules_label}}
+							</div>
+						</div>
+		        	</div>
+		        </div>
+			</div>
+		</form>
+	
+	</div>
+
+	<div class="modal-footer text-center">
+		<input class="btn btn-success" style="width: 115px;" type="button" ng-click="saveRole(role)" ng-disabled="!role.role_name || !role.start_page || !role.ids" value="Save"/>
+	</div>
+</script>
+<!-- END OF Add Role MODAL -->
+<!-- Update Role Modal -->
+<script type="text/ng-template" id="updateRole.html">
+	<div class="modal-header text-center">
+		<button type="button" class="close" ng-click="cancel()"><i class="ti-close"></i></button>
+		<h5 class="modal-title" id="modal-title" style="margin-left: 21px;">Update Role</h5>
+	</div>
+
+	<div class="modal-body">
+		<form name="maintenanceForm" role="form" novalidate>
+			<div class="row">
+		        <div class="col-xs-12 col-sm-12 col-md-12">
+		        	<div class='form-group'>
+			            <label class="control-label" >Role Name:<span style="color: #ff0000; font-size: 15px;">*</span></label>
+						<input type="text" class="form-control" ng-model="role.role_name">	
+		        	</div>
+		        </div>
+		        <div class="col-xs-12 col-sm-12 col-md-12">
+		        	<div class='form-group'>
+						<label class="control-label" >Start Page:<span style="color: #ff0000; font-size: 15px;">*</span></label>	
+						<select class="form-control" ng-model="role.start_page">
+							<option></option>
+							<option ng-repeat="page in startPage" value="{{page.modules_id}},{{page.modules_url}}">{{page.modules_label}}</option>
+						</select>
+		        	</div>
+		        </div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+		        	<div class='form-group'>
+						<label class="control-label" >Modules:<span style="color: #ff0000; font-size: 15px;">*</span></label>
+						<div class="row">
+							<div class="col-md-6 col-sm-12"  ng-repeat="module in modules">
+								<input type="checkbox" class="" ng-checked="role.ids[module.modules_id]" ng-model="role.ids[module.modules_id]" name="group" id="{{module.modules_id}}" />
+								{{module.modules_label}}
+							</div>
+						</div>
+		        	</div>
+		        </div>
+			</div>
+		</form>
+	
+	</div>
+
+	<div class="modal-footer text-center">
+		<input class="btn btn-success" style="width: 115px;" type="button" ng-click="saveRole(role)" ng-disabled="!role.role_name || !role.start_page || !role.ids" value="Save"/>
+	</div>
+</script>
+<!-- End of Update Role Modal -->

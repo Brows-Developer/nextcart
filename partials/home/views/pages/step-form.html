@@ -1,0 +1,200 @@
+<div id="progressBar">
+	<div class="loader"></div>
+</div> 
+<div class="breadcrumbs">
+	<ul>
+		<li><a href="#/" title="">Home</a></li>
+		<li><a href="#/pages/step-form" title="">Wizard Form</a></li>
+	</ul>
+</div>
+
+<div class="heading-sec">
+	<div class="row">
+		<div class="col-md-4 column">
+			<div class="heading-profile">
+				<h2>Wizard Form</h2>
+				<span>Very detailed & featured admin.</span>
+			</div>
+		</div>
+		<div class="col-md-8 column">
+			<div class="top-bar-chart">
+				<div class="quick-report">
+					<div class="quick-report-infos">
+						<p>My Balance</p>
+						<h3>$21,561.21</h3>
+					</div>
+					<span class="bar2">5,7,4,6,9,10,13,6,5,4,7,6,5,3</span>
+				</div>
+				<div class="quick-report">
+					<div class="quick-report-infos">
+						<p>New orders</p>
+						<h3>17,561</h3>
+					</div>
+					<span class="bar">2,3,7,4,6,9,5,4,3,4,6,4,2</span>
+				</div>
+			</div><!-- Top Bar Chart -->
+		</div>
+	</div>
+</div><!-- Top Bar Chart -->
+
+<div class="panel-content">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="widget">
+				<div class="step-form-sec">
+					<div class="widget-title">
+						<h3>Wizard Form Validation</h3>
+						<span>Form elements</span>
+					</div>
+			        <div class="stepsForm">
+			            <form method="post">
+			                <div class="sf-steps">
+			                    <div class="sf-steps-content">
+			                    	<div>
+			                        	<span>1</span> Profile
+			                        </div>
+			                        <div>
+			                        	<span>2</span> Account
+			                        </div>
+			                        <div>
+			                        	<span>3</span> Extras
+			                        </div>
+			                    </div>
+			                </div>                
+			                <div class="sf-steps-form sf-radius row"> 
+			                    
+			                    <ul class="sf-content"> <!-- form step one --> 
+			                         <li>
+			                            <div class="sf_columns col-md-6">
+			                                <input type="text" name="name" placeholder="Name" data-required="true">
+			                            </div>
+			                            <div class="sf_columns col-md-6">
+			                                <input type="text" name="surname" placeholder="Surname" data-required="true">
+			                            </div>
+			                         </li>
+			                         <li>
+			                            <div class="sf_columns col-md-6">
+			                                <label class="sf-select">
+			                                	<select name="country" data-required="true">
+			                                    	<option value="" selected="selected" >Select country...</option>
+			                                        <option value="de">Germany</option>
+			                                        <option value="en">England</option>
+			                                        <option value="us">United States</option>
+			                                        <option value="tr">Turkey</option>
+			                                        <option value="jp">Japan</option>
+			                                    </select>
+			                                    <span></span>
+			                                </label>
+			                            </div>
+			                            <div class="sf_columns col-md-6">
+			                                <div class="sf-radio">
+			                                	Gender :  
+			                                    <label><input type="radio" value="M" name="gender" data-required="true"><span></span> Male</label>
+			                                    <label><input type="radio" value="F" name="gender" data-required="true"><span></span> Female</label>
+			                                </div>
+			                            </div>
+			                         </li>
+			                         <li>
+			                            <div class="sf_columns col-md-12">
+			                                <textarea placeholder="Address" name="address"></textarea>
+			                            </div>
+			                         </li>
+			                         <li>
+			                            <div class="sf_columns col-md-12">
+			                                <div class="sf-check">
+			                                    <label><input type="checkbox" value="test" name="test" data-required="true"><span></span> Lorem Ipsum is simply dummy text of the printing and typesetting industry</label>
+			                                </div>
+			                            </div>
+			                         </li>
+			                    </ul>
+			                       
+			                    <ul class="sf-content"> <!-- form step two --> 
+			                         <li>
+			                            <div class="sf_columns col-md-6">
+			                                <input type="text" placeholder="Username" data-required="true">
+			                            </div>
+			                            <div class="sf_columns col-md-6">
+			                                <input type="text" placeholder="Email" data-required="true" data-email="true">
+			                            </div>
+			                         </li>
+			                         <li>
+			                            <div class="sf_columns col-md-6">
+			                                <input type="password" placeholder="Password" data-required="true" data-confirm="true">
+			                            </div>
+			                            <div class="sf_columns col-md-6">
+			                                <input type="password" placeholder="Confirm Password" data-required="true" data-confirm="true">
+			                            </div>
+			                         </li>
+			                    </ul>
+			    
+			                    <ul class="sf-content"> <!-- form step tree --> 
+			                         <li>
+			                            <div class="sf_columns col-md-6">
+			                                <input type="text" placeholder="Phone" data-number="true">
+			                            </div>
+			                            <div class="sf_columns col-md-6">
+			                                <input type="text" placeholder="Extra">
+			                            </div>
+			                         </li>
+			                         <li>
+			                            <div class="sf_columns col-md-12">
+			                                <div class="sf-check">
+			                                    <label><input checked type="checkbox" value="true" name="accept"><span></span> Lorem Ipsum is simply dummy text of the printing and typesetting industry</label>
+			                                </div>
+			                            </div>
+			                         </li>
+			                    </ul>
+			                </div>
+			                
+			                <div class="sf-steps-navigation sf-align-right">
+			                	<span id="sf-msg" class="sf-msg-error"></span>
+			                	<button id="sf-prev" type="button" class="sf-button">Previous</button>
+			                    <button id="sf-next" type="button" class="sf-button">Next</button>
+			                </div>
+			            </form>
+			        </div>
+			    </div><!-- Step Form Sec -->
+			</div>
+		</div>
+	</div>
+</div><!-- Panel Content -->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+    
+    "use strict";
+
+    	$(".stepsForm").stepsForm({
+			width			:'100%',
+			active			:0,
+			errormsg		:'Check faulty fields.',
+			sendbtntext		:'Create Account',
+			posturl			:'core/demo_steps_form.php',
+			theme			:'green',
+		}); 
+		
+		$(".container .themes>span").click(function(e) {
+			$(".container .themes>span").removeClass("selectedx");
+			$(this).addClass("selectedx");
+            $(".stepsForm").removeClass().addClass("stepsForm");
+			$(".stepsForm").addClass("sf-theme-"+$(this).attr("data-value"));
+        });
+        
+    	//*** Piety Mini Charts ***//
+    	$(function() {
+  			$(".bar").peity("bar", {
+			  fill: ["#ff8484"],
+			  height: ["40px"],
+			  width: ["94px"]
+			})
+
+			$(".bar2").peity("bar", {
+			  fill: ["#9797ff"],
+			  height: ["40px"],
+			  width: ["94px"]
+			})
+  		});
+
+    });
+
+</script>

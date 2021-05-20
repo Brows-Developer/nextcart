@@ -1,0 +1,140 @@
+<div id="progressBar">
+	<div class="loader"></div>
+</div> 
+<div class="breadcrumbs">
+	<ul>
+		<li><a href="#/" title="">Home</a></li>
+		<li><a href="#/pages/email/compose" title="">Compose Email</a></li>
+	</ul>
+</div>
+
+<div class="heading-sec">
+	<div class="row">
+		<div class="col-md-4 column">
+			<div class="heading-profile">
+				<h2>Email Compose</h2>
+				<span>Very detailed & featured admin.</span>
+			</div>
+		</div>
+		<div class="col-md-8 column">
+			<div class="top-bar-chart">
+				<div class="quick-report">
+					<div class="quick-report-infos">
+						<p>My Balance</p>
+						<h3>$21,561.21</h3>
+					</div>
+					<span class="bar2">5,7,4,6,9,10,13,6,5,4,7,6,5,3</span>
+				</div>
+				<div class="quick-report">
+					<div class="quick-report-infos">
+						<p>New orders</p>
+						<h3>17,561</h3>
+					</div>
+					<span class="bar">2,3,7,4,6,9,5,4,3,4,6,4,2</span>
+				</div>
+			</div><!-- Top Bar Chart -->
+		</div>
+	</div>
+</div><!-- Top Bar Chart -->
+
+<div class="panel-content">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="inbox-sec">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="inbox-navigation">
+							<div class="inbox-panel-head">
+								<img alt="" src="http://placehold.it/896x932">
+								<h1><i>Brian</i> Kelly</h1>
+								<a title="" href="#/pages/profile"><i class="fa fa-user"></i>Profile</a>
+								<a title="" href="#/pages/setting"><i class="fa fa-cog"></i>Setting</a>
+								<ul>
+									<li><a class="compose-btn" title="" href="#">Compose</a></li>
+								</ul>
+							</div><!-- Inbox Panel Head -->
+							<ul>
+								<li class="active"><a title=""><i class="fa fa-inbox"></i>Inbox</a><span>4</span></li>
+								<li><a title=""><i class="fa fa-paper-plane-o"></i>Draft</a></li>
+								<li><a title=""><i class="fa fa-repeat"></i>Outbox</a><span>6</span></li>
+								<li><a title=""><i class="fa fa-plane"></i>Sent</a></li>
+								<li><a title=""><i class="fa fa-trash-o"></i>Trash</a></li>
+							</ul>
+							<div class="flaged">
+								<h3><i class="fa fa-flag"></i>FLAGGED</h3>
+								<ul>
+									<li><a title="" href="#"><i style="color:#ff5c5c;" class="fa fa-tag"></i>Family</a></li>
+									<li><a title="" href="#"><i style="color:#3ac1e3;" class="fa fa-tag"></i>Friends</a></li>
+									<li><a title="" href="#"><i style="color:#f3d547;" class="fa fa-tag"></i>Private</a></li>
+									<li><a title="" href="#"><i style="color:#b447f3;" class="fa fa-tag"></i>Office Staff</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-9">
+						<div class="compose-email-sec">
+							<div class="billing-sec">
+								<div class="row">
+									<div class="col-md-6 field">
+										<label>To  </label>
+										<input type="text" placeholder="">
+									</div>
+									<div class="col-md-6 field">
+										<label>Cc </label>
+										<input type="text" placeholder="">
+									</div>
+									<div class="col-md-12 field">
+										<label>Bcc <span>*</span></label>
+										<input type="text" placeholder="">
+									</div>
+									<div class="col-md-12 field">
+										<label>Subject <span>*</span></label>
+										<input type="text" placeholder="[Subject]">
+									</div>
+									<div class="col-md-12 field">
+										<label>Subject <span>*</span></label>
+										<textarea id="neditor">Keep emails simple so that the actions required by your prospects or customers are always obvious. In today’s day and age, your readers are often just going to be skimming your emails for important, relevant points. Calls to action need to stand out and should be emphasized by either color, placement, size, or a border.
+										</textarea>
+									</div>
+									<div class="col-md-12 field">
+										<button type="submit">Send Email </button>
+									</div>
+								</div>
+							</div>
+						</div><!-- Compose Email sec -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- Panel Content -->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+    
+    "use strict";    
+
+    var editor = new nEditor($("#neditor"));
+      editor.width = "100%";
+      editor.height = "300px";
+      editor.init();
+
+
+	//*** Piety Mini Charts ***//
+	$(function() {
+			$(".bar").peity("bar", {
+		  fill: ["#ff8484"],
+		  height: ["40px"],
+		  width: ["94px"]
+		})
+
+		$(".bar2").peity("bar", {
+		  fill: ["#9797ff"],
+		  height: ["40px"],
+		  width: ["94px"]
+		})
+	});
+
+    });
+
+</script>

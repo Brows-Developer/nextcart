@@ -1,0 +1,748 @@
+<div id="progressBar">
+	<div class="loader"></div>
+</div> 
+<!--div class="breadcrumbs">
+	<ul>
+		<li><a href="#/" title="">Home</a></li>
+		<li><a href="#/" title="">Dashboard</a></li>
+	</ul>
+</div-->
+
+<div class="heading-sec">
+	<div class="row">
+		<div class="col-md-12 column">
+			<div class="widget">
+				<div class="heading-profile text-center">
+					<h2>NEW RESERVATION</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- Top Bar Chart -->
+
+<div class="panel-content">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="widget">
+				<div class="mini-stats ">
+					<h5 for="InputClients">Client&nbsp;<span class="color-required">*</span></h5>
+					<div class="form-group form-inline"> <!-- form step one --> 
+						<input class = "form-control" type="text" name="surname" placeholder="Surname" data-required="true"><span> ,  </span>
+				        <input class = "form-control" type="text" name="name" placeholder="Name">       
+				    </div>
+					
+				</div>
+			</div>		
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="widget">
+				<div class="mini-stats ">
+
+					<div class="row form-inline">
+						<div class="form-group form-inline"> <!-- form step one --> 
+       						<h5>Check In&nbsp;<span class="color-required">*</span></h5>
+
+       						<div>
+							    <p class="input-group">
+							        <input type="text" class="form-control" uib-datepicker-popup ng-model="checkin_date" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+							       	<span class="input-group-btn">
+							            <button type="button" class="btn btn-default" ng-click="open1()"><i class="fa fa-calendar"></i></button>
+							       	</span>
+							    </p>
+							</div>
+				        </div>
+				        <div class="form-group form-inline"> <!-- form step one --> 
+       						<h5>Check Out&nbsp;<span class="color-required">*</span></h5>
+
+       						<div>
+							    <p class="input-group">
+							        <input type="text" class="form-control" uib-datepicker-popup ng-model="checkout_date" is-open="popup2.opened" datepicker-options="dateOptions1" ng-required="true" close-text="Close" />
+							       	<span class="input-group-btn">
+							            <button type="button" class="btn btn-default" ng-click="open2()"><i class="fa fa-calendar"></i></button>
+							       	</span>
+							    </p>
+							</div>
+				        </div>
+				        <div class="form-group form-inline"> <!-- form step one --> 
+       						<h5>Estimated Check-in Time</h5>
+       						<p class="form-inline">
+	       						<select class="form-control">
+	       							<option value="1">00</option>
+									<option value="1">01</option>
+									<option value="2">02</option>
+									<option value="3">03</option>
+									<option value="4">04</option>
+									<option value="5">05</option>
+								</select>
+								<span>&nbsp;:&nbsp;</span>
+								<select class="form-control">
+									<option value="1">00</option>
+									<option value="1">01</option>
+									<option value="2">02</option>
+									<option value="3">03</option>
+									<option value="4">04</option>
+									<option value="5">05</option>
+								</select>
+							</p>
+				        </div>
+					</div>
+					<div style="border-bottom: 1px solid #dddddd; width: 100%;"></div>
+					<div class="row">
+						<div class="table-responsive">
+							<table class="table table-responsive">
+								<thead>
+									<tr>
+										<td></td>
+										<td class="text-left"><h5>Room Type</h5></td>
+										<td class="text-right"><h5>Daily Rate</h5></td>
+										<td class="text-left"><h5>Pax</h5></td>
+										<td class="text-center"><h5>Guest(s)</h5></td>
+										<td class="text-left"><h5>Room Allocation</h5></td>
+										<td class="text-right"><h5>Extras</h5></td>
+										<td class="text-right"><h5>Total Amount</h5></td>
+										<td class="text-left"></td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="text-center border-top-none"><h5>1.</h5></td>
+										<td class="text-center border-top-none">
+											<select class="form-control" ng-model="modelRoomTypes" ng-options="roomtypes as roomtypes.name for roomtypes in get_RoomTypes track by roomtypes.name_code">
+				       							<!--option value="{{name_code}}">{{roomtypes.name}}</option-->
+											</select>
+										</td>
+										<td class="text-right border-top-none"><h6>₱ 1,500.00</h6></td>
+										<td class="text-center border-top-none">
+											<select class="form-control">
+				       							<option value="1">2</option>
+												<option value="1">1</option>
+											</select>
+										</td>
+										<td class="text-center border-top-none"> 
+											<a title="" class="btn btn-info btn-md"><!--i class="fa fa-eye"></i--><i class="fa fa-users"></i></a> <!-- custom-input-round-50 -->
+										</td>
+										<td class="text-center border-top-none">
+											<select class="form-control">
+				       							<option value="1">Auto Allocate</option>
+												<option value="1">Allocate Now</option>
+												<option value="1">Allocate Later</option>
+											</select>
+										</td>
+										<td class="text-right border-top-none"> 
+											<h6 style="margin-top: 0; margin-bottom: 0;"><span>₱ 200.00&nbsp;</span><a title="" class="btn btn-info btn-md"><i class="fa fa-list-ul"></i></a></h6> <!-- custom-input-round-50 -->
+										</td>
+										<td class="text-right border-top-none"><h6 style="color: #ff0000;">₱ 1,700.00</h6></td>
+										<td class="text-center border-top-none"> 
+											<!--a title="" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a--> <!-- custom-input-round-50 -->
+											<a title="" class="btn btn-danger btn-md"><i class="fa fa-minus"></i></a>  <!-- custom-input-round-50 -->
+										</td>
+									</tr>
+									<tr>
+										<td class="text-center border-top-none"> </td>
+										<td class="text-left border-top-none"> <a title="" class="btn btn-primary btn-md"><i class="fa fa-plus"></i></a> </td> <!-- custom-input-round-50 -->
+										<td class="text-center border-top-none"> </td>
+										<td class="text-center border-top-none"> </td>
+										<td class="text-center border-top-none"> </td>
+										<td class="text-center border-top-none"> </td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--div class="form-group form-inline">
+							<a href="#/new-booking" class="btn btn-sm btn-success" >Add Extras</a>
+						</div-->
+					</div>
+					<div style="border-bottom: 1px solid #dddddd; width: 100%;"></div>
+					<div class="row form-inline">
+						<div class="form-group form-inline">
+							<div class="form-group form-inline customDiscount_Options" style="max-width: 31%;"> <!-- form step one --> 
+	       						<h5>Deposit</h5>
+	       						<input class = "form-control text-right customDiscount_Options" type="text" name="deposit" data-required="true"  style="width: 100%;">
+							</div>
+							<div class="form-group form-inline">
+	       						<h5>Currency</h5>
+		       					<select class="form-control">
+						       		<option value="PHP" selected="">Peso</option>
+									<option value="POUND">Pound sterling</option>
+									<option value="USD">US Dollar</option>
+									<option value="EURO">Euro</option>
+								</select>
+							</div>
+						</div>		
+						<div class="form-group form-inline">
+							<div class="form-group form-inline customDiscount_Options" style="max-width: 31%;"> <!-- form step one --> 
+	       						<h5>Discount</h5>
+	       						<input class = "form-control text-right customDiscount_Options" type="text" name="deposit" data-required="true"  style="width: 100%;">
+							</div>
+							<div class="form-group form-inline">
+	       						<h5>Currency</h5>
+		       					<select class="form-control">
+						       		<option value="PHP" selected="">Peso</option>
+									<option value="POUND">Pound sterling</option>
+									<option value="USD">US Dollar</option>
+									<option value="EURO">Euro</option>
+								</select>
+							</div>
+						</div>	
+					</div>
+					<div class="row form-inline">
+						<!--a title="" class="btn btn-primary btn-sm-50"><i class="fa fa-comment"></i></a--> 
+						<!--a title="" class="btn btn-primary btn-sm-50"><i class="fa fa-comment"></i></a--> 
+						<div class="form-group form-inline"> <!-- form step one --> 
+       						<h5>Notes</h5>
+       						<textarea rows="4" cols="60" class = "form-control"></textarea>
+						</div>
+					</div>
+					<div class="row form-inline">
+						<div class="form-group form-inline col-md-12 text-right"> <!-- form step one --> 
+       						<a href="#/new-booking" class="btn btn-sm btn-warning" >SAVE & NEW</a>
+       						<a href="#/new-booking" class="btn btn-sm btn-success" style="width: 94px;">SAVE</a>
+						</div>
+
+					</div>
+					
+				</div>
+			</div>	
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+				
+		</div>
+	</div>
+</div><!-- Panel Content -->
+
+<script type="text/javascript">
+
+	/*document.getElementById("arrdep_id").onclick = function(){
+		document.getElementById("arrdep_id").style.display = 'none';
+		document.getElementById("arrdep1_id").style.display = 'inline';
+		//document.getElementById("arrdep1_id").
+	}*/
+
+    $(document).ready(function(){
+
+    "use strict";
+	
+    	//*** Twitter Feed Widget ***//
+    	$('#tweecool').tweecool({
+			//settings
+			username : 'envato',
+			limit : 4
+		});
+
+
+    	//*** Piety Mini Charts ***//
+    	$(function() {
+  			$(".bar").peity("bar", {
+			  fill: ["#ff8484"],
+			  height: ["40px"],
+			  width: ["94px"]
+			})
+
+			$(".bar2").peity("bar", {
+			  fill: ["#9797ff"],
+			  height: ["40px"],
+			  width: ["94px"]
+			})
+
+			$(".data-attributes span").peity("donut")
+  		});
+
+    	
+  		//***** Clients lists Scroll *****//
+        $(function(){
+            $('#people-list').slimScroll({
+                height: '233px',
+                wheelStep: 10,
+                size: '2px'
+            });
+        });
+
+        //***** Twitter Widget Scroll *****//
+        $(function(){
+            $('.twitter-widget').slimScroll({
+                height: '282px',
+                wheelStep: 10,
+                size: '2px'
+            });
+        });
+
+        //*** Activity Chart ***//
+  		function updateChartData(object, data) {
+		  for (var i = 0; i < data.length; i++) {
+		    object[i].value = data[i];
+		  }
+		};
+
+			//Sort by first name
+			$(function() {
+				$.fn.sortList = function() {
+					var mylist = $(this);
+					var listitems = $('li', mylist).get();
+					listitems.sort(function(a, b) {
+					var compA = $(a).text().toUpperCase();
+					var compB = $(b).text().toUpperCase();
+					return (compA < compB) ? -1 : 1;
+					});
+					$.each(listitems, function(i, itm) {
+					mylist.append(itm);
+				});
+			}
+		});
+
+	  //Sort by last name
+	  $(function() {
+	      $.fn.sortListLast = function() {
+	      var mylist = $(this);
+	      var listitems = $('li', mylist).get();
+	      listitems.sort(function(a, b) {
+	          var compA = $('.last-name', a).text().toUpperCase();
+	          var compB = $('.last-name', b).text().toUpperCase();
+	          return (compA < compB) ? -1 : 1;
+	      });
+	      $.each(listitems, function(i, itm) {
+	          mylist.append(itm);
+	      });
+	     }
+	  });
+
+  	//Search filter
+	(function ($) {
+		// custom css expression for a case-insensitive contains()
+		jQuery.expr[':'].Contains = function(a,i,m){
+		    return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+	};
+
+
+    function listFilter(searchDir, list) { 
+      var form = $("<form>").attr({"class":"filterform","action":"#"}),
+          input = $("<input>").attr({"class":"filterinput","type":"text","placeholder":"Live Client Search"});
+      $(form).append(input).appendTo(searchDir);
+
+      $(input)
+        .change( function () {
+          var filter = $(this).val();
+          if(filter) {
+            $(list).find("li:not(:Contains(" + filter + "))").slideUp();
+            $(list).find("li:Contains(" + filter + ")").slideDown();
+          } else {
+            $(list).find("li").slideDown();
+          }
+          return false;
+        })
+      .keyup( function () {
+          $(this).change();
+      });
+    }
+
+    //ondomready
+    $(function () {
+      listFilter($("#searchDir"), $("#people-list"));
+	    });
+	  }(jQuery));
+
+
+	//*** Task lists ***//
+	$('.task-managment > ol > li').on("click", function(){
+		$(this).toggleClass('active');
+	});
+
+	//*** Task List Deleted ***//
+	$('.task-managment > ol > li > span').on("click", function(){
+		$(this).parent().slideUp();
+	});
+
+	var counter = 0;
+	$('button#addEventAdder, button#addEventAdder > i').on('click',function(){
+		var classes = ["red-skin", "sky-skin", "purple-skin", "pink-skin", "orange-skin"];
+		var ul = $('ol#listitems');
+		var item = $('input#task-item').val();
+	    if(item !== '' && item !== 'undefined' ){
+	    	if(counter == classes.length){
+				counter = 0;
+			}
+	    	$(ul).prepend('<li><i class="empty"></i>'+item+'<span class="fa fa-close"></span></li>');
+			$('.task-managment > ol > li').on("click", function(){
+				$(this).toggleClass('active');
+			});
+			$('.task-managment > ol > li > span').on("click", function(){
+				$(this).parent().slideUp();
+			});
+	    	$('input#task-item').addClass('null');
+	    	$('input#task-item').val('');
+	    	$('input#task-item').focus();
+	    	var attribute = $("ol#listitems").children('li').eq(0).children('i');
+			$(attribute).attr('class', classes[counter]);
+			counter++;
+	    }
+	    
+	});
+	
+	
+    });
+
+
+
+	//*** Chat message Initiliaze ***//
+	var KEY_ENTER=13;
+	$(document).ready(function(){
+		var $input=$(".chat-input")
+			,$sendButton=$(".chat-send")
+			,$messagesContainer=$(".chat-messages")
+			,$messagesList=$(".chat-messages-list")
+			,$effectContainer=$(".chat-effect-container")
+			,$infoContainer=$(".chat-info-container")
+
+			,messages=0
+			,bleeding=100
+			,isFriendTyping=false
+			,incomingMessages=0
+			,lastMessage=""
+		;
+		
+		var lipsum="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
+		function gooOn(){
+			setFilter('url(#goo)');
+		}
+		function gooOff(){
+			setFilter('none');
+		}
+		function setFilter(value){
+			$effectContainer.css({
+				webkitFilter:value,
+				mozFilter:value,
+				filter:value,
+			});
+		}
+
+		function addMessage(message,self){
+			var $messageContainer=$("<li/>")
+				.addClass('chat-message '+(self?'chat-message-self':'chat-message-friend'))
+				.appendTo($messagesList)
+			;
+			var $messageBubble=$("<div/>")
+				.addClass('chat-message-bubble')
+				.appendTo($messageContainer)
+			;
+			$messageBubble.text(message);
+
+			var oldScroll=$messagesContainer.scrollTop();
+			$messagesContainer.scrollTop(9999999);
+			var newScroll=$messagesContainer.scrollTop();
+			var scrollDiff=newScroll-oldScroll;
+			TweenMax.fromTo(
+				$messagesList,0.4,{
+					y:scrollDiff
+				},{
+					y:0,
+					ease:Quint.easeOut
+				}
+			);
+
+			return {
+				$container:$messageContainer,
+				$bubble:$messageBubble
+			};
+		}
+		function sendMessage(){
+			var message=$input.text();
+			
+			if(message=="") return;
+			
+			lastMessage=message;
+
+			var messageElements=addMessage(message,true)
+				,$messageContainer=messageElements.$container
+				,$messageBubble=messageElements.$bubble
+			;
+
+			var oldInputHeight=$(".chat-input-bar").height();
+			$input.text('');
+			updateChatHeight();
+			var newInputHeight=$(".chat-input-bar").height();
+			var inputHeightDiff=newInputHeight-oldInputHeight
+
+			var $messageEffect=$("<div/>")
+				.addClass('chat-message-effect')
+				.append($messageBubble.clone())
+				.appendTo($effectContainer)
+				.css({
+					left:$input.position().left-12,
+					top:$input.position().top+bleeding+inputHeightDiff
+				})
+			;
+
+
+			var messagePos=$messageBubble.offset();
+			var effectPos=$messageEffect.offset();
+			var pos={
+				x:messagePos.left-effectPos.left,
+				y:messagePos.top-effectPos.top
+			}
+
+			var $sendIcon=$sendButton.children("i");
+			TweenMax.to(
+				$sendIcon,0.15,{
+					x:30,
+					y:-30,
+					force3D:true,
+					ease:Quad.easeOut,
+					onComplete:function(){
+						TweenMax.fromTo(
+							$sendIcon,0.15,{
+								x:-30,
+								y:30
+							},
+							{
+								x:0,
+								y:0,
+								force3D:true,
+								ease:Quad.easeOut
+							}
+						);
+					}
+				}
+			);
+
+			gooOn();
+
+			
+			TweenMax.from(
+				$messageBubble,0.8,{
+					y:-pos.y,
+					ease:Sine.easeInOut,
+					force3D:true
+				}
+			);
+
+			var startingScroll=$messagesContainer.scrollTop();
+			var curScrollDiff=0;
+			var effectYTransition;
+			var setEffectYTransition=function(dest,dur,ease){
+				return TweenMax.to(
+					$messageEffect,dur,{
+						y:dest,
+						ease:ease,
+						force3D:true,
+						onUpdate:function(){
+							var curScroll=$messagesContainer.scrollTop();
+							var scrollDiff=curScroll-startingScroll;
+							if(scrollDiff>0){
+								curScrollDiff+=scrollDiff;
+								startingScroll=curScroll;
+
+								var time=effectYTransition.time();
+								effectYTransition.kill();
+								effectYTransition=setEffectYTransition(pos.y-curScrollDiff,0.8-time,Sine.easeOut);
+							}
+						}
+					}
+				);
+			}
+
+			effectYTransition=setEffectYTransition(pos.y,0.8,Sine.easeInOut);
+			
+			// effectYTransition.updateTo({y:800});
+
+			TweenMax.from(
+				$messageBubble,0.6,{
+					delay:0.2,
+					x:-pos.x,
+					ease:Quad.easeInOut,
+					force3D:true
+				}
+			);
+			TweenMax.to(
+				$messageEffect,0.6,{
+					delay:0.2,
+					x:pos.x,
+					ease:Quad.easeInOut,
+					force3D:true
+				}
+			);
+
+			TweenMax.from(
+				$messageBubble,0.2,{
+					delay:0.65,
+					opacity:0,
+					ease:Quad.easeInOut,
+					onComplete:function(){
+						TweenMax.killTweensOf($messageEffect);
+						$messageEffect.remove();
+						if(!isFriendTyping)
+							gooOff();
+					}
+				}
+			);
+
+			messages++;
+
+			if(Math.random()<0.65 || lastMessage.indexOf("?")>-1 || messages==1) getReply();
+		}
+		function getReply(){
+			if(incomingMessages>2) return;
+			incomingMessages++;
+			var typeStartDelay=1000+(lastMessage.length*40)+(Math.random()*1000);
+			setTimeout(friendIsTyping,typeStartDelay);
+
+			var source=lipsum.toLowerCase();
+			source=source.split(" ");
+			var start=Math.round(Math.random()*(source.length-1));
+			var length=Math.round(Math.random()*13)+1;
+			var end=start+length;
+			if(end>=source.length){
+				end=source.length-1;
+				length=end-start;
+			}
+			var message="";
+			for (var i = 0; i < length; i++) {
+				message+=source[start+i]+(i<length-1?" ":"");
+			};
+			message+=Math.random()<0.4?"?":"";
+			message+=Math.random()<0.2?" :)":(Math.random()<0.2?" :(":"");
+
+			var typeDelay=300+(message.length*50)+(Math.random()*1000);
+
+			setTimeout(function(){
+				receiveMessage(message);
+			},typeDelay+typeStartDelay);
+
+			setTimeout(function(){
+				incomingMessages--;
+				if(Math.random()<0.1){
+					getReply();
+				}
+				if(incomingMessages<=0){
+					friendStoppedTyping();
+				}
+			},typeDelay+typeStartDelay);
+		}
+		function friendIsTyping(){
+			if(isFriendTyping) return;
+
+			isFriendTyping=true;
+
+			var $dots=$("<div/>")
+				.addClass('chat-effect-dots')
+				.css({
+					top:-30+bleeding,
+					left:10
+				})
+				.appendTo($effectContainer)
+			;
+			for (var i = 0; i < 3; i++) {
+				var $dot=$("<div/>")
+					.addClass("chat-effect-dot")
+					.css({
+						left:i*20
+					})
+					.appendTo($dots)
+				;
+				TweenMax.to($dot,0.3,{
+					delay:-i*0.1,
+					y:30,
+					yoyo:true,
+					repeat:-1,
+					ease:Quad.easeInOut
+				})
+			};
+
+			var $info=$("<div/>")
+				.addClass("chat-info-typing")
+				.text("Your friend is typing...")
+				.css({
+					transform:"translate3d(0,30px,0)"
+				})
+				.appendTo($infoContainer)
+
+			TweenMax.to($info, 0.3,{
+				y:0,
+				force3D:true
+			});
+
+			gooOn();
+		}
+
+		function friendStoppedTyping(){
+			if(!isFriendTyping) return
+
+			isFriendTyping=false;
+
+			var $dots=$effectContainer.find(".chat-effect-dots");
+			TweenMax.to($dots,0.3,{
+				y:40,
+				force3D:true,
+				ease:Quad.easeIn,
+			});
+
+			var $info=$infoContainer.find(".chat-info-typing");
+			TweenMax.to($info,0.3,{
+				y:30,
+				force3D:true,
+				ease:Quad.easeIn,
+				onComplete:function(){
+					$dots.remove();
+					$info.remove();
+
+					gooOff();
+				}
+			});
+		}
+		function receiveMessage(message){
+			var messageElements=addMessage(message,false)
+				,$messageContainer=messageElements.$container
+				,$messageBubble=messageElements.$bubble
+			;
+
+			TweenMax.set($messageBubble,{
+				transformOrigin:"60px 50%"
+			})
+			TweenMax.from($messageBubble,0.4,{
+				scale:0,
+				force3D:true,
+				ease:Back.easeOut
+			})
+			TweenMax.from($messageBubble,0.4,{
+				x:-100,
+				force3D:true,
+				ease:Quint.easeOut
+			})
+		}
+
+		function updateChatHeight(){
+			$messagesContainer.css({
+				height:460-$(".chat-input-bar").height()
+			});
+		}
+
+		$input.keydown(function(event) {
+			if(event.keyCode==KEY_ENTER){
+				event.preventDefault();
+				sendMessage();
+			}
+		});
+		$sendButton.click(function(event){
+			event.preventDefault();
+			sendMessage();
+			// $input.focus();
+		});
+		$sendButton.on("touchstart",function(event){
+			event.preventDefault();
+			sendMessage();
+			// $input.focus();
+		});
+
+		$input.on("input",function(){
+			updateChatHeight();
+		});
+
+		gooOff();
+		updateChatHeight();
+	});
+
+
+</script>
