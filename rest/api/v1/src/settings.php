@@ -19,7 +19,7 @@ return [
         // DB Settings
         'db' => [
             'host' => '127.0.0.1',
-            'name' => 'iserve',
+            'name' => 'nextcart',
             'user' => 'gerardo',
             'password' => 'PassW0rd!!'
         ],
