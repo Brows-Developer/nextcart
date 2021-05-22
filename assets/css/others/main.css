@@ -153,7 +153,7 @@ a{
 }
 .menu-options {
 	/*margin-top: 15px;*/
-    margin-top: 3px;
+    margin-top: -3px;
     color: #808891;
     cursor: pointer;
     float: right;
@@ -419,16 +419,13 @@ header.side-header.slide-menu {
 
 
 header.side-header {
-    background: #263238 none repeat scroll 0 0;
+    /*background: #263238 none repeat scroll 0 0;*/
     height: 100%;
     left: 0;
     position: fixed;
     top: 66px;
     width: 220px;
     z-index: 2147483644;
-}
-header.side-header.light-skin {
-    background: #ffffff none repeat scroll 0 0;
 }
 .side-header.light-skin .side-menus > span {
     color: #5a5a5a;
@@ -437,10 +434,10 @@ header.side-header.light-skin {
     color: #555555;
 }
 .side-header.light-skin .side-menus nav > ul > li ul::before {
-    border-bottom-color: #dfe6ec;
+    border-bottom-color: #d5dae6;
 }
 .side-header.light-skin .side-menus nav > ul > li ul {
-    background: #dfe6ec none repeat scroll 0 0;
+    background: #d5dae6 none repeat scroll 0 0;
 }
 .admin-details {
     /*background-image: url("../images/resource/admin-bg.jpg");*/
@@ -14013,16 +14010,18 @@ li.L9 {
 
 /*Custom CSS */
 .top-bar {
-    background: #303d51 none repeat scroll 0 0 !important;
+    background: #142753 none repeat scroll 0 0 !important;
     height: 32px;
 }
 header.side-header.light-skin {
     /*background: #222 none repeat scroll 0 0 !important;*/
-    background: #546e7a none repeat scroll 0 0 !important;
+    /*background: #546e7a none repeat scroll 0 0 !important;*/
+    background: #061539 none repeat scroll 0 0 !important;
 }
 .side-header.light-skin .admin-details::before{
     /*background: #222 !important;*/
-    background: #546e7a none repeat scroll 0 0 !important;
+    /*background: #546e7a none repeat scroll 0 0 !important;*/
+    background: #061539 none repeat scroll 0 0 !important;
 }
 .side-header.light-skin .admin-status {
     color: #555555 !important;

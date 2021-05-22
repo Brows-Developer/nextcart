@@ -261,3 +261,17 @@ $app->get('/get_multiple_global_variables', function(Request $request, Response 
 	$resp = array( "status" => "success", "data" => $result );
 	return $response->withJson( $resp );
 });
+
+$app->get('/settings', function(Request $request, Response $response, $args) use ($app) {
+	$sql = "SELECT * FROM global_variables";
+	$stmt = $this->db->prepare($sql);
+	try {
+		$stmt->execute();
+		$result = $stmt->fetchAll( PDO::FETCH_ASSOC );
+		$resp = array( "status" => "success", "data" => $result);
+		return $response->withJson( $resp );
+	} catch(PDOException $e) {
+		$resp = array( "status"=> "error", "message" => $e->getMessage() );
+		return $response->withJson( $resp )->withStatus(500);
+	}
+});

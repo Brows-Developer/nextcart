@@ -10,11 +10,157 @@
 	</div>
 </div>
 
-<div class="panel-content">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="widget no-color">
-				
+<div class="row">
+	<div class="col-md-12">
+		<div class="widget" ng-class="loading ? 'loading-wait' : ''">
+			<div class="widget-controls">
+				<span class="refresh-content"><i class="fa fa-refresh" ng-click="getorders()"></i></span>
+			</div><!-- Widget Controls -->
+			<div class="mini-stats ">
+
+				<!-- <div class="col-lg-3 col-md-6 text-center" style="padding-left: 0;cursor: pointer;">
+		            <div class="panel panel-primary  {{orders_served.length > 0 ? 'green1' : orders_served.length == 0 ? 'red1' : 'grey1' }}" style="">
+		                <div class="panel-heading {{orders_served.length > 0 ? 'green2' : orders_served.length == 0 ? 'red2' : 'grey2' }}">
+		                    <div class="row">
+		                    	<div class="col-xs-6 text-left">
+		                            <h3 style="margin-top: 0px; color: #fff;">{{orders_served.length}}</h3>
+		                            <h6 style="margin-top: 0px; color: #fff;">{{"Total Orders" | translate}}</h6>
+		                        </div>
+		                        <div class="col-xs-6 text-right">
+		                                <i class="fa fa-cutlery fa-5x"></i>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div> -->
+		        <div class="col-lg-3 col-md-6 text-center figure">
+		            <div class="panel panel-primary blue1">
+		                <div class="panel-heading blue2">
+		                    <div class="row">
+		                    	<div class="col-xs-6 text-left">
+		                            <h3>{{ "9.1K" }}</h3>
+		                            <h6>{{"Total Orders" | translate}}</h6>
+		                        </div>
+		                        <div class="col-xs-6 text-right figure-icon">
+		                            <i class="fa fa-shopping-cart fa-5x"></i>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+
+		        <div class="col-lg-3 col-md-6 text-center figure">
+		            <div class="panel panel-primary blue1">
+		                <div class="panel-heading blue2">
+		                    <div class="row">
+		                    	<div class="col-xs-6 text-left">
+		                            <h3>{{ "10.4M" }}</h3>
+		                            <h6>{{"Total Sales" | translate}}</h6>
+		                        </div>
+		                        <div class="col-xs-6 text-right figure-icon">
+		                            <i class="fa fa-credit-card fa-5x"></i>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+
+		        <div class="col-lg-3 col-md-6 text-center figure">
+		            <div class="panel panel-primary blue1">
+		                <div class="panel-heading blue2">
+		                    <div class="row">
+		                    	<div class="col-xs-6 text-left">
+		                            <h3>{{ "109K" }}</h3>
+		                            <h6>{{"Total Customers" | translate}}</h6>
+		                        </div>
+		                        <div class="col-xs-6 text-right figure-icon">
+		                            <i class="fa fa-user fa-5x"></i>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+
+		        <div class="col-lg-3 col-md-6 text-center figure">
+		            <div class="panel panel-primary blue1">
+		                <div class="panel-heading blue2">
+		                    <div class="row">
+		                    	<div class="col-xs-6 text-left">
+		                            <h3>{{ "0" }}</h3>
+		                            <h6>{{"People Online" | translate}}</h6>
+		                        </div>
+		                        <div class="col-xs-6 text-right figure-icon">
+		                            <i class="fa fa-users fa-5x"></i>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+
+		    </div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-8 col-md-12">
+		<div class="widget" ng-class="loading ? 'loading-wait' : ''">
+			<div class="widget-controls">
+				<span class="refresh-content"><i class="fa fa-refresh" ng-click="getorders()"></i></span>
+			</div><!-- Widget Controls -->
+			<div class="heading-profile p-4">
+				<h2 class="m-0"><i class="fa fa-shopping-cart mr-3" aria-hidden="true"></i>{{ "Latest Orders" | translate | uppercase }}</h2>
+			</div>
+			<div class="col-md-12">
+				<table class="table table-responsive table-striped">
+					<thead>
+						<tr>
+							<th class="text-right">Order Id</th>
+							<th>Customer</th>
+							<th>Status</th>
+							<th>Date Added</th>
+							<th class="text-right">Total</th>
+							<th class="text-right">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="text-right">12073</td>
+							<td>test gerardo</td>
+							<td>Pending</td>
+							<td>21/05/2021</td>
+							<td class="text-right">{{ 205 | currency: currency_sign }}</td>
+							<td class="text-right">
+								<a href="#" data-toggle="tooltip" title="View" class="btn btn-sm btn-info" data-original-title="View"><i class="fa fa-eye"></i></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-4 col-md-6">
+		<div class="widget" ng-class="loading ? 'loading-wait' : ''">
+			<div class="widget-controls">
+				<span class="refresh-content"><i class="fa fa-refresh" ng-click="getorders()"></i></span>
+			</div><!-- Widget Controls -->
+			<div class="heading-profile p-4">
+				<h2 class="m-0"><i class="fa fa-calendar mr-3" aria-hidden="true"></i>{{ "Recent Activity" | translate | uppercase }}</h2>
+			</div>
+			<div class="col-md-12">
+				<table class="table table-responsive table-striped">
+					<thead>
+						<tr>
+							<th>Message</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>New order added reference #: <a href="#">O-12176</a></td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>

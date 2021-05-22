@@ -1,0 +1,71 @@
+<div class="col-md-12 column">
+	<div class="widget">
+		<div class="heading-profile text-center">
+			<h2>Settings</h2>
+		</div>
+	</div>
+</div>
+<div class="col-md-12 column">
+	<div class="widget" ng-class="loading ? 'loading-wait' : ''">
+		<div class="widget-controls">
+			<span class="refresh-content" ng-click="getSettings()"><i class="fa fa-refresh"></i></span>
+		</div>
+		<div class="mini-stats">
+			<div class="text-right" style="padding-bottom: 20px;">
+				<button class="btn btn-md btn-primary" ng-click="addSetting()"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;&nbsp;Add Setting</button>
+			</div>
+			<div class="table-responsive">
+				<table class="table table-bordered table-hover table-striped">
+					<thead>
+						<tr>
+							<th>Key Name</th>
+							<th>Value</th>
+							<th class="text-center">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="setting in settings" style="cursor: pointer;">
+							<td>{{setting.key}}</td>
+							<td>{{setting.value}}</td>
+							<td class="text-center">
+								<a href="#" data-toggle="tooltip" title="Edit" class="btn btn-sm btn-info" data-original-title="Edit" ng-click="editSetting(setting)"><i class="fa fa-edit"></i></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Add setting modal -->
+<script type="text/ng-template" id="editSetting.html">
+	<div class="modal-header text-center">
+		<button type="button" class="close" ng-click="cancel()"><i class="ti-close"></i></button>
+		<h5 class="modal-title" id="modal-title" style="margin-left: 21px;">Setting Details</h5>
+	</div>
+
+	<div class="modal-body">
+		<form name="settingForm" role="form" novalidate>
+			<div class="row">
+		        <div class="col-xs-6 col-sm-6 col-md-6">
+		        	<div class='form-group'>
+			            <label class="control-label">Key Name:</label>
+						<input type="text" class="form-control" disabled ng-model="setting.key">	
+		        	</div>
+		        </div>
+		        <div class="col-xs-6 col-sm-6 col-md-6">
+		        	<div class='form-group'>
+						<label class="control-label">Value:</label>	
+						<input type="text" class="form-control" ng-model="setting.value">	
+		        	</div>
+		        </div>
+			</div>
+		</form>
+	</div>
+
+	<div class="modal-footer text-center">
+		<input class="btn btn-success" style="width: 115px;" type="button" ng-click="saveSetting(setting)" ng-disabled="!setting.key || !setting.value" value="Save"/>
+	</div>
+</script>
+<!-- end setting modal -->

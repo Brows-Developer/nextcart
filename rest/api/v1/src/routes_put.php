@@ -178,3 +178,26 @@ $app->put('/roles', function (Request $request, Response $response) {
 	}
 });
 /* end of role */
+
+$app->put('/settings', function (Request $request, Response $response) {
+	$data = $request->getParsedBody();
+	$sql_update = " UPDATE `global_variables` 
+					SET `value` = :value
+					WHERE `global_variables`.`key` = :key AND `global_variables`.`id` = :id";
+	$stmt = $this->db->prepare($sql_update);
+	try {
+		$stmt->execute(
+			array(
+				':key' => $data['setting']['key'],
+				':value' => $data['setting']['value'],
+				':id' => $data['setting']['id']
+			)
+		);
+		$resp = array( "status"=> "success", "message" => "Success Update" );
+		return $response->withJson( $resp );
+
+	} catch(PDOException $e) {
+		$resp = array( "status"=> "error", "message" => $e->getMessage() );
+		return $response->withJson( $resp )->withStatus(500);
+	}
+});

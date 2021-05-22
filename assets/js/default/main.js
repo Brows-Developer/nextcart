@@ -13,6 +13,7 @@ angular.module('tutorialWebApp', [
 	'color.picker',
 	'Users',
 	'Roles',
+	'Setting',
 	'ngWebSocket',
 	'Header',
 	'Notification',
@@ -38,11 +39,15 @@ angular.module('tutorialWebApp', [
         })
 		.when('/users', {
 			controller: 'UsersControllers',
-			templateUrl: 'partials/settings/views/users.html'
+			templateUrl: 'partials/system/views/users.html'
 		})
 		.when('/roles', {
 			controller: 'RolesControllers',
-			templateUrl: 'partials/settings/views/roles.html'
+			templateUrl: 'partials/system/views/roles.html'
+		})
+		.when('/settings', {
+			controller: 'SettingsControllers',
+			templateUrl: 'partials/system/views/settings.html'
 		})
 		.when('/notification', {
 			controller: 'NotificationController',
@@ -64,7 +69,7 @@ angular.module('tutorialWebApp', [
 		})		
 		.when('/currency', {
             controller: 'CurrencyController',
-            templateUrl: 'partials/settings/views/currency.html'
+            templateUrl: 'partials/system/views/currency.html'
         })        
         .otherwise({ redirectTo: '/' });
 		

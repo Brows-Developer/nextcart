@@ -169,7 +169,7 @@ function ($uibModal) {
 		backdrop: true,
 		keyboard: true,
 		modalFade: true,
-		templateUrl: 'partials/settings/views/modal-confirms.html'
+		templateUrl: 'partials/system/views/modal-confirms.html'
 	};
 
 	var modalOptions = {

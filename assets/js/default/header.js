@@ -7,7 +7,7 @@ function (StorageService, $scope, $location, $http, $rootScope, $uibModal, $log,
 	
 	$rootScope.dateFormatString = "dd-MMM-yy";
 	$rootScope.timeFormatString = "hh:mm a";
-	$rootScope.currency_sign = 'R$';
+	$rootScope.currency_sign = '₱';
 	
 	$locale.NUMBER_FORMATS.DECIMAL_SEP = ',';
 	$locale.NUMBER_FORMATS.GROUP_SEP = '.';	
