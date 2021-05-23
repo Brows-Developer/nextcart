@@ -20,7 +20,15 @@ angular.module('tutorialWebApp', [
 	'Title',
 	'Currency',
 	'pascalprecht.translate',
-	'tmh.dynamicLocale'
+	'tmh.dynamicLocale',
+	'Order',
+	'Return',
+	'Category',
+	'Product',
+	'Attribute',
+	'Manufacturer',
+	'Information'
+
 ])
  
 .config(['$routeProvider','$locationProvider' ,'$httpProvider', '$translateProvider', 'tmhDynamicLocaleProvider', function ($routeProvider,$locationProvider, $httpProvider, $translateProvider, tmhDynamicLocaleProvider) {
@@ -70,7 +78,38 @@ angular.module('tutorialWebApp', [
 		.when('/currency', {
             controller: 'CurrencyController',
             templateUrl: 'partials/system/views/currency.html'
-        })        
+        })   
+
+        .when('/sales/orders', {
+            controller: 'OrdersControllers',
+            templateUrl: 'partials/sales/views/orders.html'
+        }) 
+        .when('/sales/returns', {
+            controller: 'ReturnsControllers',
+            templateUrl: 'partials/sales/views/returns.html'
+        })
+
+        .when('/catalog/categories', {
+            controller: 'CategoriesControllers',
+            templateUrl: 'partials/catalog/views/categories.html'
+        })
+        .when('/catalog/products', {
+            controller: 'ProductsControllers',
+            templateUrl: 'partials/catalog/views/products.html'
+        })
+        .when('/catalog/attributes', {
+            controller: 'AttributesControllers',
+            templateUrl: 'partials/catalog/views/attributes.html'
+        })
+        .when('/catalog/manufacturers', {
+            controller: 'ManufacturersControllers',
+            templateUrl: 'partials/catalog/views/manufacturers.html'
+        })
+        .when('/catalog/informations', {
+            controller: 'InformationsControllers',
+            templateUrl: 'partials/catalog/views/informations.html'
+        })
+
         .otherwise({ redirectTo: '/' });
 		
 		$httpProvider.interceptors.push('APIPathInterceptor');

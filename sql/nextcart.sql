@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 20, 2021 at 08:21 PM
+-- Generation Time: May 23, 2021 at 09:32 PM
 -- Server version: 8.0.25-0ubuntu0.20.04.1
 -- PHP Version: 7.4.3
 
@@ -73,12 +73,9 @@ CREATE TABLE `modules` (
 INSERT INTO `modules` (`modules_id`, `modules_label`, `modules_description`, `modules_url`, `modules_urls`, `has_children`, `icon`) VALUES
 (1, 'Dashboard', NULL, '#/dashboard', '/dashboard', 'menu-item', 'fa-th-large'),
 (2, 'Notifications', NULL, '', '/notification,/activity-log', 'menu-item-has-children', 'fa-bell'),
-(3, 'Inventory', NULL, '#/inventory', '/inventory', 'menu-item', 'fa-shopping-bag'),
-(4, 'Clients', NULL, '#/clients', '/clients,/client/add,/client/edit,/client/history', 'menu-item', 'fa-user'),
-(5, 'Settings', NULL, '', '/roles,/users', 'menu-item-has-children', 'fa-cog'),
-(6, 'iServe', NULL, '#/iserve', '/iserve', 'menu-item', 'fa-opencart'),
-(8, 'Orders', NULL, '#/orders', '/orders', 'menu-item', 'fa-glass'),
-(9, 'Table Orders', NULL, '#/order-detail', '/order-detail', 'men-item', 'fa-list');
+(3, 'Sales', NULL, '', '/sales/orders,/sales/returns', 'menu-item-has-children', 'fa-shopping-cart'),
+(4, 'Catalog', NULL, '', '/catalog/categories,/catalog/products,/catalog/attributes,/catalog/manufacturers,/catalog/informations', 'menu-item-has-children', 'fa-tags'),
+(5, 'System', NULL, '', '/settings,/roles,/users', 'menu-item-has-children', 'fa-cog');
 
 -- --------------------------------------------------------
 
@@ -103,7 +100,41 @@ CREATE TABLE `notifications` (
 
 INSERT INTO `notifications` (`notification_id`, `action`, `message`, `host`, `inserted_by`, `reservation_link`, `inserted_datetime`, `notification_type`) VALUES
 (1, 'notify', 'Demo Demo has logged out', 'nextcart.local', 119, '', '2021-05-20 19:42:23', 9),
-(2, 'notify', 'Demo Demo has logged in', 'nextcart.local', 119, '', '2021-05-20 19:42:28', 9);
+(2, 'notify', 'Demo Demo has logged in', 'nextcart.local', 119, '', '2021-05-20 19:42:28', 9),
+(3, '', 'NextCart Role Role has been modified. Start url: \"null\" to \"/dashboard\";', 'nextcart.local', 119, '#/roles', '2021-05-20 20:30:45', 9),
+(4, 'notify', 'Demo Demo has logged out', 'nextcart.local', 119, '', '2021-05-20 20:30:49', 9),
+(5, 'notify', 'Demo Demo has logged in', 'nextcart.local', 119, '', '2021-05-20 20:30:52', 9),
+(6, 'notify', 'Demo Demo has logged in', 'nextcart.local', 119, '', '2021-05-21 13:00:42', 9),
+(7, 'notify', 'Demo Demo has logged in', 'nextcart.local', 119, '', '2021-05-21 15:18:09', 9),
+(8, 'notify', 'Demo Demo has logged out', 'nextcart.local', 119, '', '2021-05-21 16:26:33', 9),
+(9, 'notify', 'Demo Demo has logged in', 'nextcart.local', 119, '', '2021-05-21 16:26:41', 9),
+(10, 'notify', 'Demo Demo has logged in', 'nextcart.local', 119, '', '2021-05-22 19:17:22', 9),
+(11, '', 'NextCart Role Role has been modified. ', 'nextcart.local', 119, '#/roles', '2021-05-22 19:34:54', 9),
+(12, '', 'User detail has been modified: ', 'nextcart.local', 119, '#/users', '2021-05-22 19:35:00', 9),
+(13, 'notify', 'Demo Demo has logged out', 'nextcart.local', 119, '', '2021-05-22 19:35:14', 9),
+(14, 'notify', 'Demo Demo has logged in', 'nextcart.local', 119, '', '2021-05-22 19:35:19', 9),
+(15, 'notify', 'Demo Demo has logged in', 'nextcart.local', 119, '', '2021-05-22 19:35:24', 9),
+(16, 'notify', 'Demo Demo has logged out', 'nextcart.local', 119, '', '2021-05-22 19:37:45', 9),
+(17, 'notify', 'Demo Demo has logged in', 'nextcart.local', 119, '', '2021-05-22 19:38:04', 9),
+(18, 'notify', 'Demo Demo has logged out', 'nextcart.local', 119, '', '2021-05-22 20:11:55', 9),
+(19, 'notify', 'Demo Demo has logged out', 'nextcart.local', 119, '', '2021-05-22 20:12:07', 9),
+(20, 'notify', 'Demo Demo has logged in', 'nextcart.local', 119, '', '2021-05-22 20:12:35', 9),
+(21, 'notify', 'Demo Demo has logged in', 'nextcart.local', 119, '', '2021-05-22 20:13:07', 9),
+(22, 'notify', 'Demo Demo has logged out', 'nextcart.local', 119, '', '2021-05-22 21:15:28', 9),
+(23, 'notify', 'Demo Demo has logged in', 'nextcart.local', 119, '', '2021-05-22 21:15:35', 9),
+(24, 'notify', 'Demo Demo has logged in', 'nextcart.local', 119, '', '2021-05-22 21:29:06', 9),
+(25, 'notify', 'Demo Demo has logged out', 'nextcart.local', 119, '', '2021-05-22 22:21:55', 9),
+(26, 'notify', 'Demo Demo has logged in', 'nextcart.local', 119, '', '2021-05-23 20:09:58', 9),
+(27, '', 'NextCart Role Role has been modified. Sales has been enabled; ', 'nextcart.local', 119, '#/roles', '2021-05-23 20:35:02', 9),
+(28, '', 'User detail has been modified: ', 'nextcart.local', 119, '#/users', '2021-05-23 20:35:08', 9),
+(29, 'notify', 'Demo Demo has logged out', 'nextcart.local', 119, '', '2021-05-23 20:35:11', 9),
+(30, 'notify', 'Demo Demo has logged in', 'nextcart.local', 119, '', '2021-05-23 20:35:16', 9),
+(31, '', 'NextCart Role Role has been modified. Catalog has been enabled; ', 'nextcart.local', 119, '#/roles', '2021-05-23 21:01:09', 9),
+(32, '', 'User detail has been modified: ', 'nextcart.local', 119, '#/users', '2021-05-23 21:01:14', 9),
+(33, 'notify', 'Demo Demo has logged out', 'nextcart.local', 119, '', '2021-05-23 21:01:21', 9),
+(34, 'notify', 'Demo Demo has logged in', 'nextcart.local', 119, '', '2021-05-23 21:01:27', 9),
+(35, 'notify', 'Demo Demo has logged out', 'nextcart.local', 119, '', '2021-05-23 21:16:00', 9),
+(36, 'notify', 'Demo Demo has logged in', 'nextcart.local', 119, '', '2021-05-23 21:16:02', 9);
 
 -- --------------------------------------------------------
 
@@ -182,7 +213,7 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`role_id`, `role_name`, `start_url`, `allowed_url`, `start_page_modules_id`) VALUES
-(8, 'NextCart Role', '/dashboard', '/,/login,/dashboard,/notification,/activity-log,/roles,/users,', 10);
+(8, 'NextCart Role', '/dashboard', '/,/login,/dashboard,/notification,/activity-log,/sales/orders,/sales/returns,/catalog/categories,/catalog/products,/catalog/attributes,/catalog/manufacturers,/catalog/informations,/settings,/roles,/users,', 1);
 
 -- --------------------------------------------------------
 
@@ -222,9 +253,11 @@ INSERT INTO `roles_modules_relationship` (`roles_modules_relationship_id`, `role
 (184, 6, 5),
 (185, 6, 6),
 (186, 6, 8),
-(197, 8, 1),
-(198, 8, 2),
-(199, 8, 5);
+(210, 8, 1),
+(211, 8, 2),
+(212, 8, 3),
+(213, 8, 4),
+(214, 8, 5);
 
 -- --------------------------------------------------------
 
@@ -270,8 +303,16 @@ CREATE TABLE `sub_modules` (
 INSERT INTO `sub_modules` (`sub_modules_id`, `sub_modules_label`, `sub_modules_description`, `sub_modules_url`, `sub_modules_urls`, `modules_id`) VALUES
 (1, 'Notification List', NULL, '#/notification', '/notification', 2),
 (2, 'Activity Log', NULL, '#/activity-log', '/activity-log', 2),
-(3, 'Roles', NULL, '#/roles', '/roles', 5),
-(4, 'Users', NULL, '#/users', '/users', 5);
+(3, 'Settings', NULL, '#/settings', '/settings', 5),
+(4, 'Roles', NULL, '#/roles', '/roles', 5),
+(5, 'Users', NULL, '#/users', '/users', 5),
+(6, 'Orders', NULL, '#/sales/orders', '/sales/orders', 3),
+(7, 'Returns', NULL, '#/sales/returns', '/sales/returns', 3),
+(8, 'Categories', NULL, '#/catalog/categories', '/catalog/categories', 4),
+(9, 'Products', NULL, '#/catalog/products', '/catalog/products', 4),
+(10, 'Attributes', NULL, '#/catalog/attributes', '/catalog/attributes', 4),
+(11, 'Manufacturers', NULL, '#/catalog/manufacturers', '/catalog/manufacturers', 4),
+(12, 'Informations', NULL, '#/catalog/informations', '/catalog/informations', 4);
 
 -- --------------------------------------------------------
 
@@ -326,7 +367,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`users_id`, `username`, `password`, `salt`, `pass_type`, `inserted_date`, `inserted_host`, `firstname`, `lastname`, `title`, `language`, `phone_number`, `pin`, `session_key`, `session_key_epos`, `expiration`, `prof_pic`, `active`) VALUES
-(119, 'demo', 'ef8745b7ca41609bf41e3df8ff5fa5ca', 'bQQWxr2NpvWU7re5Uj7', NULL, '2021-05-19 19:05:19', 'nextcart.local', 'Demo', 'Demo', 'Demo User', 'en', NULL, NULL, 'dbcUZDS5k1ftg1vqtnjb', NULL, 24, 'images/user/nextcart.png', 1);
+(119, 'demo', 'ef8745b7ca41609bf41e3df8ff5fa5ca', 'bQQWxr2NpvWU7re5Uj7', NULL, '2021-05-19 19:05:19', 'nextcart.local', 'Demo', 'Demo', 'Demo User', 'en', NULL, NULL, 'btatda1ghJnCWtR65tk', NULL, 24, 'images/user/nextcart.png', 1);
 
 -- --------------------------------------------------------
 
@@ -463,7 +504,7 @@ ALTER TABLE `global_variables`
 -- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `notification_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `notification_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `notification_types`
@@ -481,7 +522,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `roles_modules_relationship`
 --
 ALTER TABLE `roles_modules_relationship`
-  MODIFY `roles_modules_relationship_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=200;
+  MODIFY `roles_modules_relationship_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=215;
 
 --
 -- AUTO_INCREMENT for table `userprivilegecat`
