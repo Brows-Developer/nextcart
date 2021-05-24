@@ -41,7 +41,7 @@
     						<a ng-href="{{module.modules_url}}" title=""><i class="fa {{module.icon}}"></i> <span>{{module.modules_label | translate}}</span></a>
     						<ul>
     							<li ng-repeat="sub_module in sub_modules | filter: {modules_id: module.module_id, true}">
-    								<a ng-href="{{sub_module.sub_modules_url}}" target="{{sub_module.sub_modules_url == 'epos' ? '_blank' : '_self'}}" title=""><i class="fa fa-circle"></i><span>{{sub_module.sub_modules_label | translate}}</span></a>
+    								<a ng-href="{{sub_module.sub_modules_url}}" target="{{sub_module.sub_modules_url == 'epos' ? '_blank' : '_self'}}" title=""><i class="fa fa-angle-double-right"></i><span>{{sub_module.sub_modules_label | translate}}</span></a>
     							</li>
                             </ul>
     					</li>
