@@ -11,6 +11,10 @@
         'password' => 'your_db_user_password'
     ],
 ```
+
+- download vendor [here](https://drive.google.com/file/d/1ubk0zc4JBQWGDhGs8Me9JDzE0cPAMjcb/view?usp=sharing) after you have the file, put it under rest/api/
+
+
 ## Administrator Login
 username: demo
 
