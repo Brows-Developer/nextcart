@@ -1,0 +1,338 @@
+<div class="column">
+	<div class="widget" ng-class="loading ? 'loading-wait' : ''">
+		<div class="heading-profile text-center">
+			<h2>New Product</h2>
+		</div>
+	</div>
+</div>
+
+<div class="row two-columns">
+	<form id="newProductForm" role="form">
+		<div class="col-lg-8 col-md-12">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="widget" ng-class="loading ? 'loading-wait' : ''">
+						<div class="col-md-12 p-4">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label class="control-label">Title: </label>
+										<input type="text" class="form-control" name="Title" placeholder="Short sleeve t-shirt" ng-model="newProduct.Title">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label class="control-label">Description: </label>
+										<textarea ng-model="newProduct.Description" name="Description" class="form-control" rows="5" placeholder="Description"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-12">
+					<div class="widget" ng-class="loading ? 'loading-wait' : ''">
+						<div class="col-md-12 p-4">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<h4 class="mt-0"><b>Media</b></h4>
+										<div flow-init="" flow-files-submitted="$flow.upload()" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" class="ng-scope">
+										  	<div class="drop" flow-drop="" ng-class="dropClass">
+											    <span class="btn btn-default" flow-btn="">
+											    	Upload Image<input type="file" multiple="multiple" style="visibility: hidden; position: absolute;">
+											    </span>
+											    <span class="btn btn-default" flow-btn="" flow-directory="" ng-show="$flow.supportDirectory">
+											    	Upload Folder of Images
+											    	<input type="file" multiple="multiple" webkitdirectory="webkitdirectory" style="visibility: hidden; position: absolute;">
+											    </span> <b>OR</b> Drag And Drop your images here
+										 	</div>
+								  			<br>
+										 	<div ng-repeat="file in $flow.files" class="gallery-box ng-scope">
+										 		<input type="hidden" name="Media" ng-model="newProduct.Media[$index]" ng-init="newProduct.Media[$index] = file.name" ng-value="file.name">
+										      	<span class="title ng-binding">{{file.name}}</span>
+										      	<div class="thumbnail" ng-show="$flow.files.length">
+										        	<img flow-img="file" src="">
+										      	</div>
+										      	<div class="progress progress-striped" ng-class="{active: file.isUploading()}">
+										        	<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" ng-style="{width: (file.progress() * 100) + '%'}" style="width: 100%;">
+										          	<span class="sr-only ng-binding">1% Complete</span>
+										        	</div>
+										      	</div>
+										      	<div class="btn-group">
+										        	<a class="btn btn-xs btn-danger" ng-click="file.cancel()">Remove</a>
+										      	</div>
+										    </div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-12">
+					<div class="widget" ng-class="loading ? 'loading-wait' : ''">
+						<div class="col-md-12 p-4">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<h4 class="mt-0"><b>Pricing</b></h4>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<label class="control-label">Price: </label>
+									<div class="input-group">
+										<span class="input-group-addon">{{ currency_sign }}</span>
+										<input type="number" pattern="^\d+(?:\.\d{1,2})?$" class="form-control" name="Price" min="0" ng-model="newProduct.Price">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<label class="control-label">Compare at Price: </label>
+									<div class="input-group">
+										<span class="input-group-addon">{{ currency_sign }}</span>
+										<input type="number" pattern="^\d+(?:\.\d{1,2})?$" class="form-control" name="Compare_Price" min="0" ng-model="newProduct.ComparePrice">
+										<span class="input-group-addon"><i class="fa fa-question-circle"></i></span>
+									</div>
+								</div>
+							</div>
+							<hr>
+							<div class="row">
+								<div class="col-md-6">
+									<label class="control-label">Cost per item: </label>
+									<div class="input-group">
+										<span class="input-group-addon">{{ currency_sign }}</span>
+										<input type="number" pattern="^\d+(?:\.\d{1,2})?$" class="form-control" name="Cost_Per_Item" min="0" ng-model="newProduct.CostPerItem" ng-change="calculateMarginProfit(newProduct.CostPerItem, newProduct.Price)">
+									</div>
+									<p>Customer won't see this</p>
+								</div>
+								<div class="col-md-6 mt-4">
+									<div style="display: grid; grid-template-columns: repeat(2,auto); grid-gap: 1.6rem; align-items: center; height: 100%; word-break: break-all;">
+										<p><span>Margin</span><br><span>{{ Margin }}</span></p>
+										<p><span>Profit</span><br><span>{{ Profit | currency: currency_sign }}</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-12">
+					<div class="widget" ng-class="loading ? 'loading-wait' : ''">
+						<div class="col-md-12 p-4">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<h4 class="mt-0"><b>Inventory</b></h4>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="control-label">SKU (Stock Keeping Unit): </label>
+										<input type="text" class="form-control" name="Sku" ng-model="newProduct.Sku">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="control-label">Barcode (ISBN, UPC, GTIN, etc.): </label>
+										<input type="text" class="form-control" name="Barcode" ng-model="newProduct.Barcode">
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="form-group m-0">
+										<input type="checkbox" id="TrackQuantity" name="TrackQuantity" ng-model="newProduct.TrackQuantity">
+										<label class="label-nfw" for="TrackQuantity">Track quantity</label>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group m-0">
+										<input type="checkbox" id="ContinueSell" name="ContinueSell" ng-model="newProduct.ContinueSell">
+										<label class="label-nfw" for="ContinueSell">Continue selling when out of stock</label>
+									</div>
+								</div>
+							</div>
+							<hr>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<h5 class="mt-0"><b>QUANTITY</b></h5>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="control-label">Available: </label>
+										<input type="number" class="form-control" name="Quantity" ng-init="newProduct.Quantity = 0" min="0" ng-model="newProduct.Quantity">
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-12">
+					<div class="widget" ng-class="loading ? 'loading-wait' : ''">
+						<div class="col-md-12 p-4">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<h4 class="mt-0"><b>Shipping</b></h4>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group m-0">
+										<input type="checkbox" id="IsPhysical" name="IsPhysical" ng-init="newProduct.IsPhysical = false" ng-model="newProduct.IsPhysical">
+										<label class="label-nfw" for="IsPhysical">This is a physical product</label class="label-nfw">
+									</div>
+								</div>
+							</div>
+							<hr>
+							<div class="row" ng-show="newProduct.IsPhysical == true">
+								<div class="col-md-12">
+									<div class="form-group m-0">
+										<h5 class="m-0"><b>WEIGHT</b></h5>
+										<p class="m-0">Used to calculate shipping rates at checkout and label prices during fulfillment.</p>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="control-label">Weight: </label>
+										<div style="display: flex;">
+											<input type="number" pattern="^\d+(?:\.\d{1,2})?$" class="form-control" name="Weight" min="0" ng-model="newProduct.Weight" placeholder="0.0" step="0.01">
+											<select class="form-control w-25 ml-3" name="WeightUnit" ng-model="newProduct.WeightUnit">
+												<option value="lb">lb</option>
+												<option value="oz">oz</option>
+												<option value="kg">kg</option>
+												<option value="g">g</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row" ng-show="newProduct.IsPhysical == false">
+								<div class="col-md-12">
+									<div class="form-group m-0">
+										<p class="m-0">Customers won’t enter their shipping address or choose a shipping method when buying this product.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-12">
+					<div class="widget" ng-class="loading ? 'loading-wait' : ''">
+						<div class="col-md-12 p-4">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<h4 class="mt-0"><b>Variants</b></h4>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="checkbox" id="HasVariant" name="HasVariant" ng-init="newProduct.HasVariant = false" ng-model="newProduct.HasVariant">
+										<label class="label-nfw" for="IsVariant">This product has multiple options, like different sizes or colors</label>
+									</div>
+								</div>
+							</div>
+							<hr ng-show="newProduct.HasVariant == true">
+							<div class="row" ng-show="newProduct.HasVariant == true">
+								<div class="col-md-12">
+									<div class="form-group m-0">
+										<h5 class="m-0"><b>OPTIONS</b></h5>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-4">
+			<div class="row">
+				<div class="col-md-12 pl-0">
+					<div class="widget" ng-class="loading ? 'loading-wait' : ''">
+						<div class="col-md-12 p-4">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<h4 class="mt-0"><b>Product Status</b></h4>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group m-0">
+										<select class="form-control" name="Status" ng-model="newProduct.Status" ng-init="newProduct.Status = 'Draft'">
+											<option value="Active">Active</option>
+											<option value="Draft">Draft</option>
+										</select>
+										<p class="m-0">
+											<span ng-show="newProduct.Status == 'Draft'">This product will be hidden from all sales channels.</span>
+											<span ng-show="newProduct.Status == 'Active'">This product will be available to 0 sales channels.</span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-12 pl-0">
+					<div class="widget" ng-class="loading ? 'loading-wait' : ''">
+						<div class="col-md-12 p-4">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<h4 class="mt-0"><b>Organization</b></h4>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label class="control-label">Product Type:</label>
+										<select class="form-control" name="ProductType" ng-model="newProduct.ProductType">
+											<option ng-repeat="pt in availableProductType" value="{{pt.id}}">{{pt.product_type_name}}</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group m-0">
+										<label class="control-label">Vendor: </label>
+										<select class="form-control" name="Vendor" ng-model="newProduct.Vendor">
+											<option ng-repeat="av in availableVendor" value="{{av.vendor_id}}">{{av.vendor_name}}</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<hr>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<h5 class="mt-0"><b>TAGS</b></h5>
+										<input type="text" class="form-control" placeholder="Vintage, cotton, summer" name="Tags" ng-model="newProduct.Tags">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</form>
+</div>
+
+<div class="column">
+	<div class="widget" ng-class="loading ? 'loading-wait' : ''">
+		<div class="heading-profile text-right py-3">
+			<div class="col-md-12">
+				<input class="btn btn-success" style="width: 115px;" type="button" ng-click="AddNewProduct(newProduct)" ng-disabled="!newProduct.Title" value="Save"/>
+			</div>
+		</div>
+	</div>
+</div>
+		
