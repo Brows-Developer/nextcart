@@ -275,3 +275,32 @@ $app->get('/settings', function(Request $request, Response $response, $args) use
 		return $response->withJson( $resp )->withStatus(500);
 	}
 });
+
+$app->get('/vendor', function(Request $request, Response $response, $args) use ($app) {
+	$sql = "SELECT * FROM vendor";
+	$stmt = $this->db->prepare($sql);
+	try {
+		$stmt->execute();
+		$result = $stmt->fetchAll( PDO::FETCH_ASSOC );
+		$resp = array( "status" => "success", "vendor" => $result);
+		return $response->withJson( $resp );
+	} catch(PDOException $e) {
+		$resp = array( "status"=> "error", "message" => $e->getMessage() );
+		return $response->withJson( $resp )->withStatus(500);
+	}
+});
+
+
+$app->get('/product_type', function(Request $request, Response $response, $args) use ($app) {
+	$sql = "SELECT * FROM product_type";
+	$stmt = $this->db->prepare($sql);
+	try {
+		$stmt->execute();
+		$result = $stmt->fetchAll( PDO::FETCH_ASSOC );
+		$resp = array( "status" => "success", "product_type" => $result);
+		return $response->withJson( $resp );
+	} catch(PDOException $e) {
+		$resp = array( "status"=> "error", "message" => $e->getMessage() );
+		return $response->withJson( $resp )->withStatus(500);
+	}
+});

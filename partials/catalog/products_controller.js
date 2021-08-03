@@ -9,6 +9,6 @@ angular.module('Product', ['ui.bootstrap']).controller('ProductsControllers', fu
 	$rootScope.prof_pic = $rootScope.globals.currentUser.prof_pic;
 	$rootScope.title1 = $rootScope.globals.currentUser.title;
 
-	$scope.loading = true;
+	$scope.loading = false;
 
 })

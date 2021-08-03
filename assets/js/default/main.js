@@ -25,6 +25,7 @@ angular.module('tutorialWebApp', [
 	'Return',
 	'Category',
 	'Product',
+	'ProductAdd',
 	'Attribute',
 	'Manufacturer',
 	'Information'
@@ -96,6 +97,10 @@ angular.module('tutorialWebApp', [
         .when('/catalog/products', {
             controller: 'ProductsControllers',
             templateUrl: 'partials/catalog/views/products.html'
+        })
+        .when('/catalog/products/new', {
+        	controller: 'ProductAddControllers',
+            templateUrl: 'partials/product/views/product_add.html'
         })
         .when('/catalog/attributes', {
             controller: 'AttributesControllers',
